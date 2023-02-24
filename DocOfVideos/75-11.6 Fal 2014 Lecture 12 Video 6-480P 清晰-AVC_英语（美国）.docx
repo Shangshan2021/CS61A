@@ -1,0 +1,51 @@
+I've already extolled the virtues of sequences, but there are other things fundamental to computation as well.
+One of them is called a dictionary.
+A dictionary allows you to associate values with keys.
+To create a dictionary you use Curly Braces.
+What you do is you associated with some key, is this case i of value.
+In this case 1.
+By separating my commas, I can associate multiple different values with different keys.
+Right here I've described part of the Roman Numeral System, which is an association between capital letters and numbers.
+Now I evaluated this expression, and it created a dictionary for me.
+Notice something wild happened.
+this one looks different from this one.
+There’s a reason for that.
+Dictionaries don't have an order inherently.
+They establish a relationship between x and 10, and v and 5, but they don't establish any fixed relationship between v and x, and so Pythons free to shuffle them around however it chooses.
+Okay, so let’s call this numerals and numerals is this association.
+If I select an element, what I'm going to pass in instead of an index is a key, at which point I can get the value associated with that key.
+I cannot go the other way around.
+Ten is not a key it’s a value.
+Okay, so now we know the basic functionality of dictionaries.
+You create them with a dictionary literal which separates by commas, key value pairs that are separated by colons.
+Then using element selection you can select a key and it will give you back the value.
+There are a few more things you can do, you can look at all the keys.
+These are the dictionary keys x, v, and I, and then you can look at all the values.
+You can also look at all the items and those are the key value pairs.
+If you had this list right here of items, you could actually build a dictionary out of it just by calling the Dict constructor, at which point you could look up x in there and it would give you 10.
+You can ask Python if a particular key is in a dictionary, so x is in there, and x-ray is not.
+If you want to get out the value for a key but you’re not sure it’s there, and you want to supply a default instead, you can use the "Get method." If I get x with a default of 0, it will give me 10 because x has a value.
+If I get x-ray, it will get me 0, the default.
+Two more things that I'll show you.
+There’s an expression called a dictionary comprehension, which is like a list comprehension.
+I won't go through the details of its execution procedure, but I will show you how it works.
+Let’s say I want to associate x with x-squared for some x in a range, let’s say the range up to 10.
+I've just created a dictionary where the keys are the elements in range 10, and the values are that number squared.
+If I call this squares, and I look up the square of 7, I should get 49.
+There’s some restrictions on dictionaries.
+You can’t have the same key twice.
+If you do it will just throw out one of your elements.
+That’s part of the design of what dictionaries are, you get one value per key.
+Instead of having the same key twice, it’s fine if I have a sequence of multiple values for a given key, because this is really just one value, it’s a sequence.
+It contains other values within.
+However, I'm not allowed to use lists or dictionaries as keys.
+I can't write a list containing 1, is associated with 2.
+I'll get this error on the hash able type.
+I wish I could tell you exactly what that means but I'm not allow because I have to leave some topics for future classes, like 61b.
+Just except that you can't put lists as keys, you cannot put other dictionaries as keys, and that’s just a constraint of the language.
+Dictionaries associate values with keys, they're unordered, so don't rely on the order that you put things in because it will not be maintained.
+Keys cannot be lists or dictionaries or any mutable type in the language.
+We'll talk about what that means soon.
+Keys cannot be equal because you can only have a key once.
+This first restriction is tied to how dictionaries are implemented, and the second one is part of the design of what a dictionary is supposed to do.
+Like I said, if you want to associate multiple values with a key, put them all in a sequence.

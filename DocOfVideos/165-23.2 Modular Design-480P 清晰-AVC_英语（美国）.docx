@@ -1,0 +1,33 @@
+Large programs are complex programs.
+It's hard to think about all of their parts at once.
+And so they can benefit from a modular design, which means that the whole program is broken up into small, fairly independent parts.
+Now, they might not be completely independent, because different parts of the program have to work together to achieve the behavior of the whole thing.
+But modular means that there are components that can be switched in and out, and are separated by various kinds of abstraction barriers.
+The goal of a modular design is to achieve separation of concerns.
+Different parts of the program are concerned with different parts of the behavior of that program.
+So this is a general design principle, which encourages programmers to isolate different parts of the program that address different concerns, so that you don't have to think about all the requirements of the program at once.
+A modular component can therefore be developed and tested independently, to make sure that it accounts for whatever concern it's meant to address without worrying about the behavior of the rest of the program.
+And we've tried to illustrate this principle with the course projects.
+So in the game of Hog, there are three different modular components.
+A Hog game simulator is concerned with the game rules, the ordering of events within the game, and whatever state tracking is required to determine who won, but it knows nothing about commentary.
+The game commentary functions are concerned with describing different events that happened during the game, and whatever state tracking is necessary to generate that commentary.
+And neither of these components are concerned with what the players actually do.
+Those are the concern of the player strategy functions, which have various decision rules and capture information about strategies, like the margin of points that you'll use to decide whether to take advantage of free bacon.
+So different aspects of the game state and different pieces of the program's logic are all handled by different parts of the program.
+Now they interact because commentary functions are passed to the Play function, and strategy functions are passed to the Play function.
+But the Play function doesn't need to know much about how they work, it just needs to call them.
+The Ants project has a similar modular design.
+There's an Ants game simulator that you didn't have to write, but it handles the order of actions and tracking of the overall food of the colony and figuring out whether the game is over.
+But this part of the program really has no idea what the ant and bee actions actually do.
+Those are handled in all of the action functions, each of which is defined independently to describe what's special about an ant or a bee.
+And these characteristics make the game interesting.
+But writing an action function can be done without worrying about the order that actions will occur in, or how much food the colony has, or whether the game is over.
+And writing an action also doesn't need to know much about how the game is laid out.
+There's a separate part of the program that worries about tunnel structures, how many there are, how long they are and sets up all the entrances and exits.
+This part also keeps track of the locations of all the ants and bees.
+And most interesting programs have some kind of structural decomposition.
+And by decomposition, I don't just mean that long functions are broken up into smaller functions.
+I also mean that different aspects of the program, different concerns are isolated to different parts of the code.
+And when you build one part of the program, that part should have to know as little as possible about other concerns that aren't its concern.
+So the game commentary functions shouldn't be dependent on the rules of the game.
+In fact, your design is more modular if changing the rules of the game only changes the Hog simulator code, it doesn't change the commentary code at all.

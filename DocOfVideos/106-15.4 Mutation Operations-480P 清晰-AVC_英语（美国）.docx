@@ -1,0 +1,74 @@
+The big new idea for today is that an object can actually change its value over time.
+So in particular, we'll look at lists.
+Lists can change their contents.
+The same list can contain different things as time goes on.
+So I'm going to demonstrate how that works by telling you a story, a story of the history of suits in playing cards.
+So we think that playing cards were invented in Asia.
+And they began with three suits, the coin, the string, and the myriad.
+And these were representing different denominations of money, because what are cards good for? Well, of course, gambling.
+Okay, so those are our suits.
+And we're going to try to keep track of these original suits by using this assignment statement, and then we're going to tell a story about how those suits changed over time.
+So playing cards migrated over to Europe, through Egypt, we think.
+And in the process, this myriad suit was lost.
+And it was also the case that the string suit was lost, leaving only the coin.
+By the time playing cards reached Spain, there was a need for some new suits.
+So in the Spanish deck, you have the suit of cups, you also have the suits of swords, and clubs.
+So the coin, the cup, the sword, and the club, I believe, exist in Spanish decks today.
+And we've seen so far that you can pop off one element, you can remove an element that might be anywhere in the list.
+Pop always removes and returns the last element in the list.
+You can append a single element or you can extend the list by adding multiple elements in a sequence.
+The Italians adopted playing cards, of course.
+And in Italy, the way you say sword, which is element number 2, as you say, espada, so we have the spade.
+And then the French decided to change some of the suits.
+And so the coin and the cup went away.
+And they were replaced by the heart and the diamond.
+So here are the suits that appear in a modern American deck heart, diamonds, spade, and club.
+I believe they're also used in France.
+Okay.
+Way up at the beginning, we bound the original suits to suits.
+Let's see what the original suit is now.
+It's the same as suits.
+And that's interesting because we bounded way up here, and then we made a bunch of changes.
+But it turns out, these were just two different names for the same object.
+And so changes to one were reflected in the other.
+This is the first example in this course of an object-changing state.
+Something big just happened right now.
+The same object can change in value throughout the course of computation.
+If I bind the name same person to some BABY, by the way, this is a Unicode character called BABY.
+Then, if that baby grows up, the same person is still bound to the same person, but changes appear in that object.
+If I bind two different names to the same object, and that object changes, well those changes will be reflected regardless of which change I use.
+Okay, so all names that refer to an object are affected by a mutation.
+Now becoming an older woman isn't necessarily called a mutation out there in the real world.
+But in computer science, mutation is a word that's used whenever there is a change to an object.
+Only objects of mutable types can change in their values.
+And list in dictionaries are examples of that that we've seen so far.
+So let's look at how to change the contents of a dictionary.
+If I create a dictionary, called the numerals with I bound to 1, and V bound to 5, and X bound to 10, I can look at the contents of the whole dictionary or I can look at a value bound to a particular key.
+I can also change the value bound to a key.
+At which point, if I look it up again, I'll get a different answer.
+And the numerals dictionary has changed.
+Notice that the binding between X and 10 is just gone completely.
+And it's been replaced by X paired with 11.
+Now I can also make new entries to a dictionary, just using this element assignment statement.
+So now numerals has more in it than it used to and I can look up what L is bound to.
+I can also get rid of a binding by using the pop method, which takes a key and removes the key-value pair for that.
+So now if I tried to get the value for the key X, there's nothing there because numerals has changed.
+By the way, mutation can happen within a function call.
+So a function contains the value of any object that's in its scope, that's a mutable value.
+So if I say four is 1, 2, 3, 4, and the length of four is 4, some mystery function can be called on 4, at which point, the length of 4 would be only 2.
+What sort of mystery function might do that? Here's one.
+So this one takes in an argument we'll call s and then pops it twice.
+So invoking the method pop removes the last element.
+So we define the function, we create the list we call mystery.
+Mystery introduces a new frame in which s is bound to the same object that 4 is bound to.
+So that, when I pop that, I'm actually removing the last element, which forever changes the value to which 4 is bound.
+Now 4 isn't bound to anything different than it was before.
+It's just that this list is different, and has different contents.
+Popping again means that it will be even shorter.
+Here's a different function that would do the same thing, remove every element after index 2.
+And that would mean removing the 3 and the 4 and replacing that slice of the list with just no elements at all.
+Now, what happens when we create 4, and then we call a mystery function that doesn't take any arguments? Does it still have access to 4? Can it change it? Sure.
+How does it do that? Well, it just refers to the 4 list, which is within its scope.
+It's in the global frame.
+Anything can refer to something in the global frame.
+And so it just starts popping stuff off of 4.

@@ -1,0 +1,38 @@
+Measuring efficiency.
+This is not about objects in particular, but about how to understand how long your program is going to take to run.
+So let's go back to our first example of tree recursion, which was a way to compute elements of the Fibonacci sequence using tree recursion with the following implementation.
+Element 0 is 0.
+Element 1 is 1.
+Everything else is the sum of the previous two.
+Thanks, Fibonacci for making this sequence so popular.
+If I want to compute fib(5), that involves summing up the results of fib(3) and fib(4).
+And fib(3) means summing up 1 and 2.
+Here, I've marked the base cases with their return values.
+So to compute fib(3), I have to do all that work.
+To compute fib(4), I have to do all of that work.
+And the actual computation proceeds in a pattern that looks like this.
+So this tree-shaped computation actually begins by calling fib(5), which calls fib(3), which calls fib(1), which actually returns the number 1.
+The next thing to return is this call to fib(0), fib(0) and fib(1) are summed to give you fib(2), and then we can finally return from the call to fib(3).
+And we proceed by computing the rest of the values that we need in order to finally return from fib(5).
+So we want to understand how long it takes to run this computation.
+And the first thing we'll do is just count the number of calls to fib and see how that grows.
+fib(n), if n = 0, or n = 1, return n, otherwise, return fib(n-2) + fib (n-1).
+I know this is slightly different from what was on the slide, but it will do the same thing.
+If I run this code and ask what fib(5) is, it will tell me it's 5.
+fib(6) is 8, fib(7) is 13, etcetera.
+Now what I'm going to do is define a decorator called count, which takes in a function f, returns a new counted version of f, which when called on n, not only returns the result, but also increments the call count attribute, which is an attribute that we'll use to keep track of how many times this function was called.
+Now, for counted, we have to start out with a call count of 0 so that we can increment it later, and then we can return that counted function.
+So we could decorate fib at count, but instead, we'll just do it here in the interactive session.
+So fib is a counted version of fib.
+If I call fib on 5, I can then ask how many times was this called? And it was called 15 times.
+Now, this is cumulative.
+So if I call fib(5) again, the call count has gone up to 30.
+Now, if I call fib on some large n, such as 30, it will do quite a bit of computation and come up with 832,000.
+But the actual number of times I called this function was 2 million times.
+2.69 million calls to fib just to compute this result.
+And many of those calls were returning 0.
+Some were returning 1, some were returning large numbers until we finally got to the result that we wanted.
+So we can see why this took a while to call.
+So the point of this example is to start to understand exactly what happens when you call a function and how that relates to the time that it takes for the function to return.
+And we've started out by just counting the number of times that we call something.
+But over the next two lectures, we'll develop more sophisticated ways of talking about the running time of a program.

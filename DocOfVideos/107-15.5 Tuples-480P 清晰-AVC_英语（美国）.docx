@@ -1,0 +1,52 @@
+Tuples are sequences, but they are immutable sequences.
+Meaning that they cannot be changed.
+Now, before I go on, I will mention that some people call these tuples.
+And some people call these tuples.
+And while there is no established convention for the pronunciation of this word, the two groups can at least agree that the other group must be wrong.
+I'll let you decide how you want to pronounce this word.
+But I'll say tuple most of the time, though occasionally, you'll probably catch me saying tuple.
+So, tuples are sequence values.
+3, 4, 5, 6 is a tuple.
+See how we've not used square brackets but instead parentheses.
+Though in fact, you don't need those parentheses at all in order to have a tuple literal.
+Anything separated by commas is evaluated as a tuple.
+A lot of people always put the parentheses around them, just to be clear about what's going on.
+You can make an empty tuple, you can call tuple on nothing to make an empty tuple.
+Or you could call a tuple on a list or any sequence for that matter, and it will give you a tuple back with the same contents as that list.
+Now what if you wanted to have a tuple with only one element? Well, it is possible to do that.
+And the syntax is just terrible, you have to put a comma at the end.
+And you can put that in parentheses as well, if you want.
+So that's different from the number 2 and that this is a tuple containing 2, and this is just the number 2.
+And you can add together tuples in order to get bigger tuples.
+You can use the membership operator to figure out whether an element is in a tuple.
+And you can slice tuples as well.
+Now, tuples are immutable values, which means it is possible to use them as the keys in a dictionary.
+Remember that it was not allowed to use a list as a key in a dictionary.
+Because you get this error unhashable type list.
+Now, even though you can use a tuple, you can't have a tuple with a list in it somewhere, that will cause an error as well.
+So tuples are immutable sequences and immutable values actually have some benefits.
+One is that they're protected in a way from mutation.
+If I have a turtle, which has a sequence 1, 2, 3, and then I call some function called ooze, the turtle is going to still be 1 2 3 because this sequence cannot be changed.
+Numbers are immutable values as well, so are strings.
+The only mutable values, the ones that can change, are lists.
+So if I have this list, turtle 123, and I call ooze, just like we saw before, we might have anything in turtle at this point.
+Now it's not strictly true that ooze cannot affect turtle, it can't change this value.
+But in the next lecture, we'll see that a function could change what the name turtle is bound to.
+So you get some protection, but not full protection in the language, from having functions make changes to your current environment.
+The value of an expression can change because of changes in names or objects.
+So a name change we've seen for a long time, if I have the same expression twice x + x and x + x, we might get different values because the name x has been used for something else.
+So if I said x = 2, then this would be 4.
+But if I said x = 3, then x + x would be 6.
+So those are name changes, and we've seen them throughout the course.
+Object mutation is different, but it can also have the same effect of changing what an expression evaluates to.
+So if x used to be the list, 1, 2 , then x + x would be 1, 2, 1, 2.
+But if I append three to the end, then I'll get 1, 2, 3, 1, 2, 3 for x + x.
+So these are two different ways in which the same expression can have a different value.
+And with immutable objects, this one doesn't apply.
+But this one always applies.
+You can always change the names of things.
+An immutable sequence may still change if it contains a mutable value as an element.
+So let's say I have a tuple that contains a list.
+Then I can't change the tuple, that's what I mean by immutable.
+But I could change the list within the tuple, so the tuple still contains the same stuff.
+But the list within it is different than it was before because this 1 was changed to a 4 so as you can see that's not that.

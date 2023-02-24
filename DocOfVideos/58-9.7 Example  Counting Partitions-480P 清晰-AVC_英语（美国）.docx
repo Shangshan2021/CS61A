@@ -1,0 +1,89 @@
+Now we'll look at a very important example called counting partitions.
+And this example is important because it's a tree recursive process, that's actually quite hard to write without tree recursion.
+So one of the reasons we learned about recursion in this course, is to solve problems like this one, like counting the partitions of an integer.
+What is that? Well, the number of partitions of a positive integer n, using parts up to size m, is the number of different ways in which n can be expressed as the sum of parts up to m, in increasing order.
+Let me show you an example.
+Say we want to count the partitions of n equals 6, using parts up to size m equals 4.
+Here are all of those partitions.
+And this is an exhaustive list of everything that counts as a partition of 6, using parts up to size 4.
+So each line is a sum of different parts, or the parts are in increasing order.
+So we have two plus four, but we don't have four plus two, because that's decreasing order.
+Okay.
+Now notice that each part is always up to 4, but never bigger.
+So we don't include 1 + 5, that doesn't count as a partition of 6 using parts up to size 4.
+But we do include 2 + 4, and 1 + 1 + 4 as different ways of partitioning up the number 6.
+The idea here is we're counting the number of different ways that we can break 6 into groups.
+Now we can illustrate these different partitions by showing what we're grouping.
+So we have 2 here and 4 here, or we have 1 and 1 and 4 here.
+And all of the other options can be illustrated on a line as well.
+And the purpose of the count partitions function is just to tell us how many different partitions there are. Not necessarily to tell us what they are.
+So in this case, there are 1, 2, 3, 4, 5, 6, 7, 8, 9 different options.
+So count_partitions(6, 4) should return the number 9.
+Okay, let's understand how we would compute this value 9.
+And we need a strategy that will compute partitions for any n and any m that we pass it.
+So let me tell you the strategy first, and we'll work on the implementation afterwards.
+We're going to look for a recursive decomposition of the problem.
+Meaning that we need to express this problem in terms of simpler instances of the same kind of problem.
+And we're going to do that by exploring two different possibilities.
+One is that we'll include at least one group of 4, or one 4, in the sum of parts that we use in the partition.
+And the other option, which is everything that doesn't include a 4 says that we're never going to include a 4 in the partition.
+We're only going to use parts up to size 3 or less.
+Now, splitting these two possibilities actually splits the set of all things that we want to count into two disjoint subsets, the ones that include a group of 4, and the ones that don't.
+Another observation is that everything that includes a group of 4 really just has to partition what's left over after we subtract four.
+So in both of these cases, we're actually just partitioning the number 2. We can get it by just the number 2, or by 1 + 1 using groups up to size 4 still.
+And what about the bottom half? Well, the bottom half is all the ways of partitioning 6 but using parts up to size only 3.
+So we're really solving two similar instances of the same problem, meaning we'll make two recursive calls to count partitions.
+When we're trying to compute count_partitions(6, 4), using at least one 4 means that we then have to count the partitions of 2, again, using parts up to size 4.
+So there's the simpler instance of the problem that we solve above this line, assuming that we to use at least one 4.
+The other simpler instance is that we count the partitions of the whole number 6, using parts that are one smaller than the one we had before.
+So we're assuming we're not going to use any fours.
+So we'll use parts up to size 3.
+And we need to count up all of those.
+So if we count up these 2, and we count up these 7, we'll get the 9 in total that we want in order to solve the problem.
+And that's the recursive decomposition that we'll use in order to count the partitions of a positive integer n.
+So tree recursion can be thought of as a technique for exploring different choices or different possibilities.
+These are the two possibilities we explore in this case.
+And what do we do with the result? Well, we sum the results together, because we actually want all the different alternatives.
+And these two possibilities split that set evenly right here.
+Now, when we make one of these recursive calls, that's going to involve further decomposition in the same way. The count partitions of 6 using parts up to size 3 will divide that set of 7 up into two groups, those that use a 3 and those that don't.
+And here we have to count partitions of the three that remain.
+Here, we have to count partitions of all 6, using parts up to size only 2.
+And each of those has recursive decompositions, as well, sometimes here, and sometimes here.
+And in this way, we explore all the different possibilities and can compute the final result that we want.
+Hurray.
+So we're finally ready to write some code.
+Once we have a recursive plan in place, we just need to write an implementation that executes that plan.
+So we define count partitions of a number n, using parts up to size m. And let's start with the recursive case, because that's what we've been talking about.
+We count the partitions of n - m, using parts of size m, which is all the cases in which we use at least one part of size m.
+We also count the partitions, then, using parts that are smaller than m, or m - 1.
+And then we sum together the cases in which we used an m, and the cases in which we didn't.
+And that should give us all the different cases that we're interested in, and the total ways of partitioning n.
+So for the case of (6, 4) as our input, this with m is count_partitions(2, 4), and without m is count_partitions(6, 3).
+Now we just need base cases.
+If we're partitioning 0, well, let's just say there's one way to do that, which is to add nothing together.
+If we're partitioning, non-positive number, we've done something wrong along the way.
+There's no way to do that.
+And so we return 0 because we're not allowed to use negative parts.
+And if the maximum part size m gets to be 0 or less, well, there's no way to build anything out of parts of size 0, so we return 0 there as well.
+And that's our complete implementation of count partitions.
+Let's watch it work.
+So I'm going to define count partitions.
+Our count partitions have a slightly simpler instance than we talked about before. We're going to count partitions of 5 using parts up to size 3.
+And here are all the different alternatives that we want to sum up: 1 1 1 1 1 or 1 1 1 2, or 1 2 2, or 1 1 3, or 2 3.
+So the original call to count partitions with n is 5 and m is 3, which involves two recursive calls, one of which is partitioning the number 2 using parts up to size 3, which if we do some computation, eventually returns the number 2.
+So if we try to use an m, like if we try to use a part of size 3 in order to partition 2, that's impossible, so that's why we get a 0 there.
+If we tried to partition the number two with things smaller than 3, then we find there two different ways. 1 + 1 and just the number 2 alone.
+So those are the two different alternatives.
+And we've computed what we get when we count the partitions of 2.
+Now what happens when we count the partitions of 5 using parts of size 2 or smaller? Well, those are these three alternatives that we have leftover.
+So if we run through the computation, we see many recursive calls.
+And after some amount of work, we compute that using m, which is the number of 2, we find two different ways of summing up the number 5.
+So here are the two different options that involve using the number 2, with part size 2 or less.
+And the only thing we haven't accounted for is the sum of all 1s.
+So without m should include the sum of all 1s, we run some computation, try some different alternatives.
+And right here, we found that without using m, so using only 5, so computing 5 with only parts 1, there is a way to do that.
+We return that one way.
+So we return it here.
+We sum 2 and 1 together.
+We find out that without m, we get 3.
+We sum 2 and 3 together, and we get the actual value we want, which is all five ways of counting partitions of 5 using parts of the size 3.

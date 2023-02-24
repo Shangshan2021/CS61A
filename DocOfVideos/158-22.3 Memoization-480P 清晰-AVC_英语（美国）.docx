@@ -1,0 +1,59 @@
+Memoization is an extremely useful technique for speeding up the running time of a program.
+Here's the simple idea.
+Just remember the results that have been computed before.
+So instead of recomputing things when you need their values again, you just keep them around.
+Here's another decorator.
+It's called memo.
+It takes in a function, which may take a while to compute.
+But we also keep a cache of the values that were returned by that function before.
+In the memoized version of f, we check and see first if the argument that was passed in is in the cache.
+If it's not in the cache, then we add it to the cache, meaning we make a mapping between the key n and the return value f of n.
+Now, we actually have to call f, which was originally passed in, in order to compute this return value.
+But once it's in the cache, we're never going to compute it again.
+Instead, we'll just return the return value that's already in the cache.
+Once I have returned to the memoized version of this function, I will have automatic caching built-in.
+So we keep a dictionary between keys and values, where the keys or arguments and the values are returned values of f.
+And this memoized function has the same behavior as f if f is a pure function.
+If it's a non-pure function, then we don't actually call f every time we call memoized, so it might have different behavior.
+So that's something to keep a lookout for.
+You can only really memoize pure functions and expect their behavior to stay the same.
+Let's see what happens when we use a memo to speed up fib.
+So a memoized version of f keeps track of a cache, takes in an argument in n.
+If n is not in the cache, and we put it in the cache with the return value of f and n.
+We return what's in the cache every time, and we return memoized.
+fib(30) used to take a while to compute.
+But what if we change fib to be a memorized version of it? Then we can compute fib(30) rather quickly.
+In fact, we can compute fib(50) rather quickly, or fib(300), which is a very large number.
+But it's not that hard to compute.
+All we have to do is compute fib 298 and fib 299, which we do almost instantly with this memoized version of it.
+So let's see if we can understand what's going on.
+I've restarted Python.
+So fib is slow again.
+What we're going to do is replace fib with a counted version of fib, so we can see how many times it actually gets called.
+We'll give another name to that counted version of fib, so we can access its attributes.
+Now, I'm going to change fib to a memoried counted version of fib, and we can even count that.
+And we'll call fib on 30, which completes instantly.
+There were 59 calls to the memoized version of fib, some of which reached the cache, and some of which actually called the underlying original fib function, which we call the counted fib in this example, and it's called count was 31.
+Now, why 31? Well, there are 31 different arguments that we pass it.
+30, 29, 28 all the way down to 0.
+And so that's exactly how many times we call the original function.
+Now, what about 59? Well, let's take a look at what's going on.
+Here's our tree structured recursive process.
+And we're going to keep track of actual calls to fib, times when we called the memoized version of fib and found the result in the cache, and times that we just skipped entirely.
+There must be lots of times that we skipped it entirely because we made so many fewer calls than we did before.
+So we call fib(5), which calls fib(3), which calls fib(1), which returns 1.
+That's an actual call to the fib function.
+So as this call to fib(0).
+But the next time fib(1) is called, we just get the value that we've already computed from the cache.
+So this doesn't count as a call to the underlying fib function, but does count as a call to the memoized version.
+fib(2) returns and then fib(3) returns.
+The next thing that happens is that we call fib(4), which calls fib(2), which is already in the cache.
+Which means we can skip over these calls to fib(0) and fib(1) entirely.
+They never even happen.
+And that's because this structure is something that's repeated from what we've already done before.
+So we find fib(2) immediately.
+And when we call fib 3, we find that result immediately as well, skipping these recursive calls.
+So with fib(2) and fib(3), we finally can return from fib(4), and then return from fib(5).
+So as you can see, for each value of n, fib is called exactly once.
+And for many values of n, the memoized version of fib is called a second time in order to finish the computation.
+But fib(4) is never called the second time and neither is fib(5).

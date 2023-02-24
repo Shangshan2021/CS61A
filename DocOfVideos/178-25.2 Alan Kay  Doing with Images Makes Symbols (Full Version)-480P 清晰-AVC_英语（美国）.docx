@@ -1,0 +1,870 @@
+Welcome to the distinguished lecture series.
+I'm Karen Matthews of University video communications.
+Our program is designed to enrich graduate and upper division curricula with academic presentations by top computer scientists from industry.
+Its speakers and topics were nominated by computer science faculty of more than 50 universities.
+This presentation is sponsored by the higher education marketing group at Apple computer.
+Dr. Alan Kay, a pioneer in computer human interaction, received his PhD in computer science from the University of Utah in 1969.
+He joined the artificial intelligence project at Stanford, and in 1970, became a founding principle of the Xerox Palo Alto Research Center where he remained for 10 years.
+After Xerox, he was chief scientist at Atari.
+Since 1984, Alan has been an Apple fellow with a charter to explore new ideas for Apple's future.
+His talk today is Doing with Images Make Symbols, Communicating with Computers.
+It's our pleasure to introduce Dr. Alan Kay.
+Alan.
+Thank you.
+This is a talk about the only computer most of us ever see.
+The one that's acted out on the stage of the screen called the user interface design.
+User interface, in many ways, is a second stage of development after the operating system because the operating system, as we all know, was a layering of software that tried to turn a sometimes poorly designed machine into one that was more fruitful for the software environment.
+The user interface tries to do the same thing.
+It tries to design a special kind of machine that's very understandable, very efficient for the person who uses it without removing any of the things that the machine can actually do.
+This talk is too short to include all of the people that have contributed to user interface over the years.
+I'm just going to pick out a few that particularly struck me along the way, and illustrate it by means of examples.
+So in order to get started, let's go back 25 years to what must seem like the Pleistocene age for most people in universities today to the dawn of some very important ideas, and first was the very first personal computer that you see on the slide here.
+This is a machine called the LINC.
+It was designed at Lincoln Labs in 1962 by Wes Clark, and it's my vote for the first personal computer ever done.
+You see it has a display and a keyboard and has some funny little things that look like deck tapes, but were actually originally designed for this machine, and one of the design criteria for this machine was it was supposed to be small enough on the desk so that a person could see over it.
+So one of the ideas that this machine should not be intimidating, and about 2000 of these were built in the 60s, mostly for biomedical technicians who didn't have a mainframe at their disposal and didn't want to hire programmers to use it.
+They wanted something that they could build, setup experiments themselves, do their own programming.
+And remarkably, a very large number of the original 2000 are still in use today 25 years later.
+The reason is that, among other things, nervous systems of animals haven't sped up in those years.
+And so a computer that worked very well back then for doing neural neurological experiments works very well today.
+Something else was happening at Lincoln Labs in 1962, and that was the invention of computer graphics.
+Ivan Sutherland's Sketchpad, probably the most significant single thesis ever done.
+Remarkable program in many ways, even today, as we'll see by looking at this tape.
+This tape is from the very first movie-- from the very first movie of Sketchpad taken in the summer of 1962.
+So this is 25 years old.
+Rubber bands you're familiar with, but look at what he's doing.
+He's pointing at the edges and saying, I want them to be all mutually perpendicular, and sketchpad just figured out how to do that.
+Sketchpad is the first system to ever have a window.
+He's actually drawing on a virtual sheet of paper about a third of a mile on a side.
+And again, to get something he wants, he simply sketches it in roughly and then gives rules like be parallel and perpendicular, and Sketchpad figures out and solves the problems.
+Here the rule is collinearity so that the dashes lie directly over the guidelines below.
+The Sketchpad was able to solve very complicated problems in real time involving both linear and nonlinear systems of constraints.
+So it was the first nonprocedural programming system and considerably more powerful in the spreadsheets of today.
+So he's made a hole in the flange, continuously zooms back.
+Now he wants to make a rivet.
+And again, we see why it's called Sketchpad.
+He just draws a rough shape, uses the center of the crossbar there as the center of the arc, and then points to the edges and says, I want these to be mutually perpendicular again.
+Solving that forces the crossbar to change which forces the arc to change which gives you a perfectly symmetrical rivet.
+And he shows that no matter how you distort it, when he turns the problem solver on, it will come up with a symmetrical solution, and he could have made it more complicated.
+He could have constrained the side lengths to be ratios of each other or tied to some other drawing in the environment.
+Now another important idea seen here for practically the first time is that of master drawings and instances.
+He was working on a master drawing, and what he has here now is an instance of that.
+The instance can be rotated and scaled and positioned, so he's going to insert the rivet in the hole.
+By the way, the Sketchpad was the first system in which it was definitely discovered that the light pen is a very bad input device.
+The blood runs out of your hand in about 20 seconds and leaves it numb.
+And in spite of that, it's been reinvented at least 90 times in the last 25 years.
+Here's another instance of the rivet, another one.
+The display is jumping around like that because they didn't even really have computer displays back.
+Then the TX2 is putting up every dot by brute force.
+He didn't like the cross pieces, so he goes to the master drawing, makes them transparent, lo and behold, we see dynamically that the instance rivets have felt that change.
+So Sketchpad is also the first object oriented software system.
+I once asked Ivan Sutherland, how could you possibly have done the first interactive graphics program, the first nonprocedural programming language, the first object oriented software system all in one year? He said, well, I didn't know it was hard.
+It's nothing like this before.
+And here he's showing that every instance that you make of something, every master can create instances.
+So he's making a bunch of copies of the whole in the flange.
+And I'd like to tell you where you could go to buy a system as good as Sketchpad, but I don't know where because there isn't anything like it even on the market today 25 years later.
+It was a one of a kind thing.
+It ran on a machine much larger than the studio that I'm recording the talk on.
+In fact, it was the last computer large enough to have its own roof in the United States.
+That mammoth machine had all of 460k bytes and executed about 400,000 instructions per second, which meant that this machine, this supercomputer of 25 years ago was about the size of a 512k Macintosh.
+So what you saw there on the screen could be done on any of the desktop computers today, but nobody is doing it.
+Something we should think about, just why? Now moving ahead just a couple of years, we see another pioneer, Douglas Engelbert, the fellow who invented the mouse, the black on white display, and the first person to successfully implement hypertext, something that everybody is talking about today, and he did something else.
+It was almost obscene even by today's standards.
+He actually went and studied his users.
+So he would poke around in people's offices and see the way people actually worked in offices, and he discovered something funny, that even after 16 years of schooling, the people wouldn't sit hunched over their desks the way they'd been taught.
+Think of it.
+A tremendous failure in American education.
+16 years of being taught to sit hunched over a desk, and people would still scoot around in their office chairs and put their feet up on their desk, and so forth.
+And Engelbert said, well, why the heck should we make people hunched over their desks to use their personal computers? Why not build something into, in this case, it's a lap board that's built into the arm of the chair, so as the person moves around the room and does all the things they're used to doing with their chair, he is able to also use his computer navigation equipment.
+Here's an example of Engelbart's system as of about 20 years ago in a live demonstration from San Francisco.
+He is sitting in San Francisco in an auditorium with about 3,000 people, and his group and the machines and the rest of the paraphernalia are in Menlo Park about 35 miles away.
+The program that I'm going to describe to you is quickly characterizable by saying if in your office, you as an intellectual worker, were supplied with a computer display backed up by a computer that was alive for you all day and was instantly responsive, instantly responsive, every action you had, how much value could you derive from that? Well, this basically characterizes what we've been pursuing for many years in what we call the Augmented Human Intellect Research Center at Stanford Research Institute.
+So look what else we can do here.
+I've got this file, this structure.
+If I want to see what's in there, I can walk down the hierarchy levels and see or return, but there's another thing I can do.
+This root I said I have here.
+So here I'm afraid I'll need a different picture of the view.
+So here's what I drew with a picture drawing capability.
+There's a slight map of how I start from work, and here's the route I seem to have to go to pick up all the materials, and that's my plan for getting home tonight.
+But if I want to, I can say the library, what am I supposed to pick up there? I can just point to that, and, oh.
+I see.
+Overdue books and all.
+Well, there was a statement there with that name.
+Go back.
+What am I supposed to pick up the drugstore? Hmm.
+I see.
+Very interesting.
+I mark it.
+Oh, I've already seen that, but I just don't like that.
+Gee.
+That's too much.
+Anyway, so we have this feature of structuring our material hierarchically, being able to move around it very well.
+When we get a hierarchy, such as I can show you here now, I can do things if I wanted, just say I'd like to interchange produce and canned materials.
+Bingo, and they're all numbered rightly, if I cared to look, interchanging them very quickly.
+Cans are going into get interchanged with produce.
+They do, and it all gets me no.
+So I have ways of studying over, making different views, moving around, going to specified points, and modifying the structure.
+At the same time, I've seen that I have a repertoire of different entities.
+By character, knock off that character.
+Replace the character, make that P.
+So I have entities of all sorts that I can say I want to do operations on, and this basic structure that I can move over and study and get about very quickly.
+So that is the essence now.
+That's the essence of the tool we have, a lot of details that I've left out for you.
+And that's for a good feedback.
+Here are characters that show me the different viewing parameters, view specs.
+They get larger at times, which I can add, hit single strokes to change those view parameters, and each of those means something to me, and they're being large at particular times tells me I can get hit a very quick abbreviation for changing a view.
+So I can say I'd like to go to produce, but I'd like-- go to produce.
+They get big.
+I'd like say one branch only, and let me look just that low, and I see it.
+Or I can say I'd like to see one line only.
+I could it.
+So these ways I move around, the way I get feedback up here, the way I use both hands to coordinate to tell the computer what commands and what literals I want are all carefully designed to go together to make the repertoire.
+I'd link to Bill, and I don't want his terminal is right now.
+So I have to ask for somebody to connect me to him audibly, [? audioly. ?] I'd like to link to Bill, and I don't know what his terminal is right now.
+So I have to ask for somebody connect me to him audibly, [? audioly. ?] So Bill, will you come in through this intercom.
+Hello, Dough.
+Hi.
+I need to know what terminal you're on, Bill.
+13.
+OK.
+I'd like to have him see my text.
+And so the special thing, if I label 13, will switch over.
+So in his display, he sees my text.
+So I'll execute it.
+And sure enough, it does, but what's that running around? Well, he's looking at my text.
+He'd like to have something to say about it.
+So we put on a marker, tracking spot that he controls.
+So he's sitting in Menlo Park looking at this text, and he can point to it, but we've carefully reserved for me the right to control and operate on this.
+So my bug is more powerful than yours.
+[AUDIENCE LAUGHING] But we can have an argument.
+[AUDIENCE LAUGHING] Yeah.
+That's what we call a bug fight.
+So all right.
+So in case you haven't been listening, Bill-- [BILL LAUGHING] We've been going through lots of examples and setting up a collaboration here so that we can go on into information retrieval, and we set up now audio coupling, and we're both looking at the same display, and that'd be very handy to work.
+We can talk to each other, point, and maybe later I can hand you the chalk on this blackboard like saying, here.
+You control it.
+But let's stay this mode now and add another feature that Add another feature that is hardware wise is available to the kind of display we have I'd like to see you while I'm working on it.
+So before I can do that, I have to set up my display in a certain way.
+Set it up so I see it over like that that leaves a corner up there, and I say, now computer.
+Do the automatic switching that will bring in a camera picture from the camera mounted on his console such as a camera mounted on mine is.
+Hi bill.
+That's great now.
+Now we're connected.
+Audio.
+You can see my work.
+You can point at it, and I can see your face, and we can talk.
+So let's do some collaborating.
+So Engelbert had a complete vision of what this was going to be like years before all of the rest of us, and the vision included not just some of the ideas about how people were going to react and interact with the machine, but also that since people aren't natural born hermits-- in fact, we're all really communications junkies-- Engelbart realize that any kind of user interface design must include person to person collaboration through the medium of the machine.
+And so as the very first set of ideas that they had wasn't just how you organize your information in forms of indimensional hypertext, but how you could share it, how you could do something much more than electronic mail, but be able to do direct contact, sharing the information, being able to point, being able to talk to each other and being able to see each other.
+We might compare that with the very fragmentary vision of the current day micro-industry which is just struggling over decades to try and reach the vision that Engelbert had almost in a complete form as early as 1962.
+Another thing that's interesting, if we look at the setup here of the mouse in one hand, a regular keyboard in the center, and a five finger keyboard on the left hand, we see something that was a very good idea, and we may have noticed something that was also a bad idea.
+The very good idea Engelbart realized that you really didn't want to spend most of your time going back and forth between the regular keyboard and the mouse because you have to find the mouse.
+You have to find the keyboard, and so forth.
+Instead, Engelbart wanted to set it up so that you would spend a relatively long period of time in either of those two ways of doing things.
+Either you'd be typing a paragraph of text, or you'd be doing lots of navigation and fixing single character errors and stuff.
+And so the five finger keyboard working with the three button mouse is a way of doing all the things that you could do with the keyboard.
+So you could stay for a very long time and never touch the regular keyboard, and then the thing that they missed, and they partially missed it because of the inaccuracy of the analog mouse, was what we call modeless interaction where you indicate the object first and then give the command.
+Because the mouse was inaccurate, what they would do in the command, instead of just hitting something like a word or a character or a paragraph and then saying something like move or going to some drag icon, they would have to go and say move word, then wait for a mouse click to indicate which word.
+By what you said to move, like move word, move character, move paragraph, the program would know how fine to try and interpret the mouse coordinates it got.
+Then after it had picked the object, you then had to do a command accept.
+So in order to move something, you had to do four separate actions which is quite inefficient, even though he'd already set up a more inefficient scheme than we use today for actually using the tools, kind of an interesting paradox.
+That's sort of the way it goes.
+Now, a few years later, 1967 time period, this is the first personal computer that I worked on called the flux machine, did it with Ed Cheadle and this is a picture of it on its own display.
+So by that time, we'd realized that we could build a desktop computer.
+And of course, this was a desktop computer for only very special kinds of desks like those made out of steel.
+So it weighed well over 100 pounds, and it had two characteristics that were very noticeable.
+One of them was it was a tremendous coffee warmer, These little black dual in-line packages that hold silicon, the Macintosh has about 50 of them or so that makes up a Macintosh.
+Back then, you were lucky if you could get 8 or 16 gates in one of these dip packages, and so this machine had about 700 of those and generate an enormous amount of heat, and had a fan that was likened to a 747 taking off.
+The other thing that was very notable about the machine is that the user interface tended to repel most of the people that we tried it on.
+I was a designer of that interface, and I was really crestfallen that people regarded somewhat the way you would if you lifted the lid on a garbage can and saw something moist and fuzzy down inside.
+I was very puzzled is how could we put all this work into the machine that had a very powerful interactive object oriented language that I had derived from Simula, graphic, very high quality graphics.
+In fact, it had one of the very first gadgets called the clipping divider done at the same time as Ivan Sutherland in Harvard, and then later brought out to Utah.
+Had a very large virtual screen that you could map onto the physical screen, had multiple windowing, not overlapping windowing because it was a calligraphic display.
+Lots of good stuff, and yet it didn't fly with the people that we tried it with.
+And one of the insights as to why this was and what to do about it came from early contact in 1968 with Seymour Papert logo work at Bridge School in Lexington, Mass.
+The whole idea of children being able to program on a device that up to now had been in what is called the glass house in industry, is that big room with air conditioning and raised floor and so forth, whole idea that this could be extended down to the world of a child just changed my whole conception about what it was.
+I went from thinking of it as did Engelbart as some super vehicle, something akin to a car as compared to IBM's Pennsylvania railroad, went from thinking of it as that to something much simpler.
+I thought of it now as media because cars we withhold from children until they're 18, though I don't know why.
+That's when they're most dangerous, but we still nonetheless think of waiting until they're 18.
+Media, we never think that way.
+Paper and pencil we want children to start using from the time they can grab a crayon, and so this work of Papert was critical in our understanding of what was going on.
+Another that was going on at Lincoln Labs was the first iconic programming.
+It was done at RAND corporation, the people who did the wonderful interactive programming language JOSS.
+It was done for economists and other noncomputer specialists at RAND who had to compute.
+And one of their complaints about-- really, their only complaint about JOSS was they said, hey, none of us can type.
+Can't you do something about that? So that led to the invention of the first data tablet.
+It was called the RAND tablet back then.
+And this system, from about 1968, called GRAIL for graphical input language.
+This list of processes takes us back to the topmost level where we may start to edit the flow diagram.
+No keyboard, whatsoever.
+First we erase a flow arrow, then move the connector out of the way so that we may draw a box in its place.
+He recognized he wanted to box and made one.
+Now it's recognizing his hand-printing.
+--commentary only in this case.
+The box is slightly too long-- He wants to change the size of the window.
+Here's where McIntosh window control came from literally.
+Then draw a flow from the connector to the box.
+Attach a decision element to the box, and draw a flow from it to scan.
+Notice that every command is not just iconic, but also analogic.
+And by that I mean that it looks like the thing that you want.
+So if you want to scrub something out, you scrub it out.
+If you want to draw a box, you just draw a box.
+It recognizes you want one, makes one the same size.
+Chop off a corner.
+And label it subscan.
+You want characters who just make characters, and it recognizes those.
+There are no menus to reach to.
+You're always looking directly at where you're working, and notice it missed the n at the end of sub scan there.
+He saw.
+He hesitated, but it's the world's first modeless system, so he's able to just go and change it without issuing any more commands.
+You see every command that's actually being issued, and they're all in the form of direct action.
+Complete the diagram from scan to post.
+What a remarkable system that was.
+And when I saw that, I felt and used it for half an hour in 1968.
+I felt like I was sticking my hands right through the display and actually touching the information structures directly.
+This is the first system I'd ever used and practically the only one since that I've called truly intimate, and it was this degree of intimacy that is so important in a user interface.
+I used to show this movie to my group at Xerox PARC every three months or so we wouldn't forget what we're trying to do.
+Another thing that we saw in 1968 was tiny one inch square first flat panel display done at the University of Illinois, and we realized it was only going to be a matter of years until you could put all of the electronics that we had in the flex machine on the back of the flat panel display.
+You'd have something like this, which I later came to call a Dyanbook.
+Back in 1968 when I made this cardboard model, I just thought of it as the machine of the future and started thinking about, what would it be like for millions of people to have one of these machines? And so the metaphor became the pencil.
+What would it be like to have something like this as extent in the world as a pencil and paper? Could people actually use it? And the answer in 1968 and the early 1970s was no.
+So one of the ways I started thinking about answering the question is since we'd failed at designing for adults, and I remembered a wonderful phrase of Marshall McLuhan's, he said I don't know who discovered water, but it wasn't a fish.
+The idea is if you're immersed in a context, you can't even see it.
+So we decided to follow Seymour Papert lead, and instead of trying to design for adults, we would try and see what this Dynabook of the future would be like for children, and then maybe hope that some of it might spill over into the adult world.
+So children were an absolutely critical factor here, and the first stuff I did in my notebook in 1970 was called Kiddi Comp, and here is what it first looked like.
+It's going to be built out of a Sony tummy trinitron.
+Then Xerox PARC came along with some wonderful almost open charter funding and a very interesting culture.
+These are the beanbags that were so famous at PARC.
+And one of the reasons we used them, we discovered that it was impossible to leap to your feet to denounce somebody once you sat in a beanbag chair because you tended to sink into it further and further.
+So it had a way of relaxing people, and it was very good for design.
+Then we started experimenting, so we built this machine which was a very, very high resolution way of displaying video images, and the first fruits of that was this font editor, the first font editor done by Ben Laws.
+And all of a sudden, you could get images like this, that it was quite possible to mimic the high quality printing images on a bitmap display.
+We got very interested in that.
+Trying some of these ideas out on children, we discovered they didn't always like their-- they might zoom in on that.
+They didn't always like to have their rough drafts look like they've been printed by The New York Times.
+So some of the children said, well, what we really would like to have four rough drafts is our own handwriting, so they use this font editor and put in their own handwriting, and that was a way of instantly telling when you looked at a document just how finished it was intended to be.
+And the bitmap display also allowed us to do sketching and drawing as well as, crisp computer graphics.
+And again, one of the things that had not been possible before is doing real design on a computer.
+Before, people always design on the back of an envelope and then brought the back of-- to the computer as a way to render it, but here what we'd hope for is that people would actually stay with the computer for the better part of the day.
+We put a lot of effort into making this display be something you could look at for six or seven hours without eye strain.
+Next, envisionment of this was a little system called Mincom, and this was the summer of 1971, and we went to a considerable direction in thinking about making this.
+And then we also did some dynamic animation, as we'll see in a minute.
+Spacewar! Had a very important part in the design of things because it was a conceptually simple precursor of all of the video games we know today.
+It should be something that a child could write for himself.
+And we started working on Smalltalk an object oriented language based on Simula but also with a lot of look back to what Sketchpad-- Then all of this led to the Alto computer built mostly by Chuck Thacker at Xerox PARC, the first workstation, and led to all of the subsequent workstations, and also led directly to the Lisa and the Macintosh at Apple.
+We used a improved version of Engelbart's mouse.
+And in its early stages, we call it the interim Dynabook.
+We brought lots of children into PARC to work on these machines, and then we took the machines down into the Palo Alto schools, working with several children in all.
+Here we are Jordan junior high school around 1976.
+Now let's take a look at animated versions of some of the things that ran on this machine and some of the things that the children did.
+Well, here's the famous Dynabook book model, and back then we wanted it to be like the Hewlett-Packard calculator, except to be a real life computer.
+This was the inspiration for all that we are thinking about is what it was going to be like.
+Here's Ben Law's font editor being used to make an in lydian cursive.
+Most of these are taken from home movies we shot with a 16 millimeter Bolex.
+Here's the painting program.
+This is something I designed in the summer of 1972, and Steve Purcell implemented it.
+Here you see some hand character recognition.
+It recognized the letter C as a command for drawing circles.
+That was put in by John Shock.
+We were experimenting with this at the time.
+Here's an L for drawing lines.
+One of the nice things about hand character recognition is that you don't have to move very far to hit something.
+Here's the D for drawing.
+The idea of actually being able to fashion your brushes right in the combination of canvas and palette itself was something that Purcell thought up, I think.
+The idea of having charcoal and airbrush effects was something that was also added at the very beginning of this, and you get some charcoal effects.
+Here's some experiments for the very first experiments with Windows, dragging them around by 1 corner, opening their size at the other corner just like on the Mac today, making another one by going up to the upper right hand corner, typing something in it, clipping the stuff that's inside.
+I think this is the very first actual test, although, of course, we knew windows were going to work because there had been examples of windows before, but this is the very first test of them on a bit mapped display and some experiments with the user interface, what they might be like to just manipulate them.
+Here is one of the very first group of kids.
+I can tell that because there aren't even display covers on the display.
+We had to put in old cardboard boxes to keep the kids from getting electrocuted.
+This is a group of, I think, 6th graders, 5th or 6th graders.
+And this is Adele Goldberg, who later went on to head the group after I left PARC, and she was responsible from many of the ideas in teaching the children.
+We first did logo like things in Smalltalk, such as this program, and we also experimented with animated windows.
+And here's the very first test of an animated window, which we later abandoned because the machine wasn't quite fast enough, but I still think it's a nicer way of doing it where instead of getting a just an open frame that moves, you actually animate all of the text itself and have it occlude the window.
+Those are the Alto screen in early 1973, not long after the Alto had first started to work.
+The Alto was actually a very powerful computer if you could get to its microcode directly.
+We could, and the Alto was able to animate about 120 square inches of graphics in multiple planes, so you could do very complex 2.5D animation effects, and this is something done by Purcell I think around the end of 1973, and that was really the machine we thought we had.
+It was a machine that you could animate everything on it.
+Tying all that stuff together with Smalltalk, we got a number of interesting things with the kids.
+Here's one of the second level classes.
+This was a 13-year-old teaching 12-year-olds, and Marion had done one of the very first tools in Smalltalk the year before when she had learned it, and she was a very outgoing, ebullient young lady, and she wanted to teach a class.
+And so we brought in-- we had five machines at the time.
+So we just had five children, and we videotaped all of the 100 hours of it.
+Here's an example.
+This is from 1975 of a program that looks very much like MacDraw.
+It's an object oriented graphics illustrator.
+You can select by means of selection handles.
+You can change colors.
+You can change the size.
+So the menu is being used on the lower right hand there, and the feedback is coming in the window in the center.
+The only thing that's really interesting about this program besides that it was done in 1975, which is before you could buy it in a store, is it was actually conceived, designed, and implemented by a 12-year-old girl after only a few months of programming in Smalltalk.
+It took her about two weeks to do this, and the size of the program in Smalltalk 72 was about a page long.
+So part of our aim here was not just to get people to be able to access things by means of the windows, but also to be able to do the equivalent of writing short essays and having have great effect.
+And one of the things that is disturbingly true about most novices on computers is that about two pages of program is the maximum.
+They can handle they like to be able to spread it out, use their visual field as an extension of their short term memory here's another example.
+A 15-year-old boy, again after a few months of programming and Smalltalk 72, he was interested in ham radio, but really had gotten bored with the tedium of drawing radio diagrams.
+So he decided to make himself a ham radio illustrator, and has some quite sophisticated features.
+You see here a pop up menu would often use things like open and closed dots, and he has a more extensive menu of iconic shapes for the circuits down below.
+So he can pick up a battery symbol and rotate it and put it in.
+This is also done in 1975, and it's one of my favorite programs done by a child because less than 10 years before this, a PhD had been awarded for a system that wasn't as good.
+This program is about 80 lines of code law in Smalltalk 72.
+[VIDEO PLAYBACK] Now next, we have a program done by adults, but for the most part who had never programmed before.
+They were professional animators that came to PARC in the summer of '74.
+And the thing that animators would like to do is to see whether their animations are going to work before they have to go to film.
+So, that summer they devised a variety of systems, and this is what every animator would like to do, is draw the picture, reach over into the movie window, grab the thing you've just drawn, show it what to do, have it playback.
+Now of course, it's not squishing when it hits, so it doesn't look quite real.
+So, he wants to go through the steps there in the iconic menu.
+And when it gets down to the bottom here, what he's going to do is replace that with a fresh drawing that's going to come from another transparent cell that he overlays in the drawing windows on the right hand side.
+So, the drawing windows can have several transparent cells overlaid each other.
+He uses the old one for registration purposes.
+So, he's now drawing on another cell, and that drawing will be inserted into the animation as the animation goes.
+And now the animator can see how much detail he has to put into that squashed drawing before we see it as actually squashing.
+And he obviously has to at least put in the specular reflection on the ball.
+There he goes.
+And now we see it as a deformation even though it's a one frame change.
+That program was about five pages long, which is longer than children can actually do.
+But here's a 12-year-old girl that was very interested in horses.
+And so, she spent some time getting the correct gait and animating a horse across the screen.
+But then, she wanted a feature that the adult animators hadn't put in, and that was to be able to combine two animations into a single one.
+So, she has the horse animation going over there, and here she has a jockey animation.
+And she wants to be able to pick it up and in the act of actually combining, she wants them now to fuse into one drawing.
+This is a feature that she was able to put in herself because even though she wasn't capable of writing a five page program like the adults, she was quite capable of reading it and making a change in it.
+And here's the finished animation.
+[END PLAYBACK] Now what we've just seen are some things that are familiar to us now in this day of the microcomputer.
+We've also seen some things that people aren't yet doing.
+People don't usually sit down and do for themselves a complete tool like an illustrator.
+They go to the store and spend several of dollars, and yet here we see 12-year-old children coming up with the idea and be able to implement it, and not only being able to implement it, but being able to implement it in a very compact form.
+Now, why is that? And why is this such an important part of computer literacy? I think literacy has three important parts to it.
+There's an access part, and in the print medium, we call that reading.
+Somebody else makes up the material and we have the skills to penetrate that material and understand it.
+Access literacy.
+The second one is creative literacy.
+We don't think a person is literate if all they can do is read.
+We think they should be able to write.
+And the English language is powerful enough in its metaphor that we can do very strong expressions of our own intent in just a page or two, and start a revolution with two pages of well couched prose.
+And programming languages just haven't been strong enough and easy enough to understand, but if we're ever to have computer literacy, it is going to have to have those two things as first order attributes.
+And then the third thing in computer literacy is that for anything that we can be literate in, there is a literature.
+So, when we read Shakespeare, we have to read Shakespeare with a completely different approach to the genre of the Elizabethan age than we do from reading Mickey Spillane.
+So, throughout the many centuries in which the English language has existed, there are different genre that we have to be able to adapt to.
+And that's the third form of literacy is genre literacy.
+And then, the third thing in computer literacy is that for anything that we can be literate in, there is a literature.
+So, when we read Shakespeare, we have to read Shakespeare with a completely different approach to the genre of the Elizabethan age than we do from reading Mickey Spillane.
+So, throughout the many centuries in which the English language has existed, there are different genre that we have to be able to adapt to.
+And that's the third form of literacy is genre literacy.
+In this talk, I'm concentrating mostly on the first two.
+And now, I want to go and focus on why this stuff works, and how we came to some of these design decisions.
+Of course, some of it was just haphazard and random.
+Some of it we rationalized after the fact.
+But some of it we actually thought it through, and were able to use stuff that had been done before.
+So, to give you an idea of how difficult it is to understand how the mind works, let's take a look at this slide and see if we can see what's wrong with it.
+If you look at it for a while, you'll see that the mouth is somehow upside down, and maybe something wrong with the eyes.
+Maybe they're upside down too.
+And if I were teaching in a school, and trying to teach you about what had been done with this slide, I would say an English sentence like the following.
+I'd say, well here we've taken a slide of a young girl, extracted her eyes and mouth, and put them back in with an airbrush, and then turned the entire slide upside down.
+That's an English sentence.
+And now that I've said that, you can understand everything about what it looks like when I turn it right side up.
+Now, I've given this talk many times, and I'm going to have to move it backward because I discovered nobody listened to me when that slide is on.
+And from the many times I've given the talk, I know that there were gasps in the classroom when you saw that picture because you weren't prepared for it even though I told you everything about what had been done to it.
+Now, perceptual psychologists really love when something like this happens because it means that information going in through one channel, the auditory channel to your language processing centers, elicited one kind of response to my sentence.
+And when you saw the actual picture through your visual channel, it elicited a completely different response.
+And this is actually understood physiologically as well as psychologically.
+On the under right hand side of your brain where you do face recognition, there are two pieces of brain tissue about an inch apart.
+One of them is an expert at faces.
+It's a thing that allows you to see faces in clouds, the thing that scares children in twilight, they see menacing shadows.
+And it's reporting right now, I see an upside down face-like thing.
+But about an inch away is another piece of brain tissue that's an expert in eyes and mouth, and eyes and mouth only.
+And it's saying, well that's a good looking mouth, and those are OK eyes.
+There's very little dissonance between the reports of these two separate pieces of brain tissue.
+Now, when I go to this right side up version of the thing, the face recognition guy is saying, well that's the right side up face like thing.
+And the eyes and mouth guy is saying, something is terribly wrong here.
+And you can imagine why nature might have arranged for you to be startled.
+Seeing a face like this up close might mean you're going to die in the next 10 seconds.
+And in fact it is built into all mammals, something that we don't learn but is in the mammalian nervous system.
+So, if you try this on a dog, I suggest you pick a small one.
+So, the basic idea here is that what we think of as the unitary I, unitary I-ness of I, myself, and me, is really a multiple set of different mentalities that apparently came about during different evolutionary periods.
+The mentalities think differently, they don't communicate very well with each other, they're often in conflict, and only a few of them talk.
+So, we're only aware of a few of them in what we call our consciousness.
+Most of what the other mentalities do, we call our subconscious.
+But relegating everything thing to the subconscious is almost akin to mysticism, and in fact there's a lot more to be learned about this area.
+And we got interested in three of these mentalities, first from the work of John Piaget.
+And Piaget said that he thought children and adults have a unitary mentality that goes through stages as the child matures.
+So, Piaget said, first there is a doing stage where a hole is to dig it, and an object is to grab it.
+Thinking is action in that stage.
+A child doesn't think ahead, he doesn't imagine the consequences of his action.
+He just does.
+Later on is the image stage, child of five or six or seven, who for instance when given a squat glass poured into a tall, thin glass will say there's more water in the tall, thin glass.
+I think everybody is familiar with that experiment of Piaget's.
+And it's because the child is being dominated by the visual image that looks like there's more water there, and so, that the visual logic says that there is.
+Then around 11 or 12, Piaget says that the child goes to a facts and logic stage, away from the immediacy of the visual environment, or at least in Swiss French children who are 11 or 12.
+There are less evidence that American children ever get into the facts and logic stage.
+Now, when we looked at Piaget's theory, it was interesting.
+What it seemed to say is that if the child is below the age of five, say, you should only do muscular things than if the child is in this age between, say, roughly five and 11 that you should do mostly visual things, and then above that you should do sort of symbolic things.
+And it just didn't come through with any ideas for us.
+But while reading about Piaget, we had found the work of Bruner, who is the American psychologist who was one of the persons to bring Piaget to the American public's attention.
+And Bruner had a more interesting theory, and it came about from experiments that he did to confirm what Piaget was talking about.
+So, Bruner did the experiment, took the water in the squat class, and poured it into the tall, thin one.
+The child said, yes.
+There's more water in the tall, thin glass.
+Then Bruner did something that Piaget hadn't thought to do.
+Bruner then covered up the glass.
+And the child said, oh, but wait.
+There must be the same amount of water because where would it go? And then Bruner revealed the tall, thin glass, and the child said, oh wait.
+No, look.
+There's more water.
+And Bruner covered it up again, and the child said, oh, there must be the same amount of water because where would it go? So, if you have any nine-year-olds you'd like to torment, this is a good way to do it, because what Bruner was doing was jumping the child not from this mentality back to a previous stage, but he was showing, as he did in many experiments, the existence of multiple mentalities.
+So, the child was normally visually dominant here, but if you occluded the visual field, then this fledgling symbolic mentality that was really going to be switched on in a stronger way later on, could actually work.
+And from this, we got a lot of ideas.
+It suggested that there are ways of using some of these other mentalities, and we got some confirmation from some interesting work in the literature of creativity.
+One of them was by Jacques Hadamard, the famous French mathematician, who in the late stages of his life decided to poll his 99 buddies, the other who made up together the 100 great mathematicians and physicists on the earth, and he asked them, how do you do your thing? And they're all personal friends of his, so they wrote back depositions.
+And only a few out of the 100 claimed to use mathematical symbology at all.
+It was quite a surprise.
+All of them said they did it mostly in imagery or figurative terms.
+And an amazing 30% or so, including Einstein, we're down here in the mud pies.
+Einstein's deposition said, I have sensations of a kinesthetic or muscular type.
+Einstein could feel the abstract spaces he was dealing with in the muscles of his arms and his fingers.
+So, one way of interpreting Hadamard's diagram here is the genius is the ability to recapture childhood at will.
+That's sort of the Piagetian way of looking at it.
+But a stronger way is look at it through Bruner's eyes and see that what is actually going on is that these very creative people are somehow able to be in contact with other mentalities that are going on all the time.
+Now, this is a better way of thinking about this than simply splitting things up into conscious and subconscious, or right brain and left brain.
+This notion that each one of these things evolve for a different reason, and can do different kinds of logics is very important.
+And we'll see why in a second.
+Now, I'm going to give you a the most graphic demonstration I know of this principle in action, of what it means to actually be able to teach directly to the mentality that's going to learn rather than trying to teach through an inappropriate channel.
+You see, the sad part of Hadamard's diagram is that every child the United States is taught math and physics through this channel, the channel that almost no adult creative mathematician and physicist uses to do it, and that is really a shame.
+They use this channel to communicate, but not to do their thing.
+And much of our education is founded on those principles, that just because we can talk about something there is a naive belief that we can teach through talking and listening.
+Now, this example I'm going show is taken from a television show in 1975 on Harry Reasoner's television show on ABC.
+And he had read a book that apparently upset him called The Inner Game of Tennis, which basically said, almost anybody can learn to play a decent game of tennis in just a single afternoon if you don't try too hard.
+And that had made him wonder because he'd been trying to play tennis for many years.
+And so, he sent an ABC news squad out to California to expose this charlatan.
+And what they did was to round up a number of people, and get them to sign legal affidavits saying that that they had never played tennis before.
+They took them all out in the court, and picked the worst one who happened to be a 55-year-old lady, 40 pounds overweight, 5 foot 2" in a moomoo.
+And she had the moomoo because her deposition said that not only had she never played tennis, but she had not even exercised in 20 years.
+So, taking them all on the court, turning on the live TV cameras, they set a clock and said to Tim Gallwey, you have 20 minutes to teach her how to play tennis.
+Now, let's look at this from the standpoint of user interface design because in every way, Tim Gallwey is the user interface of this interactive teaching situation we have.
+And let's see what he actually does.
+[VIDEO PLAYBACK] This has sound.
+- And as the ball flies through the air, I want you just to watch it.
+And the very instant the ball hits the court, I want to say, bounce.
+And the very instant the ball hits the racquet, I want you to say, hit.
+So, you'll just be saying, bounce, hit.
+All you need to do is watch the ball.
+OK? - Bounce.
+Hit.
+- The key of all the exercises in The Inner Game is to focus the mind's attention somewhere where it will not interfere with the body's ability to hit the ball automatically.
+You stand here, and Tim will throw you a couple, and you just continue doing the same thing.
+- Should I try to hit it? - Not at first.
+At first, just say bounce when the ball bounces, and hit when you would hit it, but don't hit it.
+Then after you feel like hitting it, go ahead and hit it.
+- OK.
+- Now, you might watch her right arm here.
+- Hit.
+Bounce-- - If something is trying to hit that ball even though she was told that she didn't have to.
+Now, she actually tries, she misses.
+Says bounce, he's also out of the corner of his eye watching me hit the ball.
+So, even though he's not trying to see how I hit it, the image of me hitting it is going right into his memory.
+You enjoying yourself? - Yeah, it's really fun.
+- You like that.
+OK.
+Here we go.
+- I love it.
+- The cardinal principle in any book written on tennis about tennis is to watch the ball.
+No tennis player really sees the ball enough.
+And the reason is they get bored.
+So, I try to give them something to see in the ball that's interesting.
+So, we watch the trajectory of the ball, the gracefulness of the line made by the ball as it flies through the air.
+Always hit the same.
+Put the mind somewhere where it can stay calm and not get you up tight, but relaxed and interested.
+Then the body does so beautifully.
+So beautifully.
+You might start listening to the ball, Molly.
+Listen to how it sounds in your racquet.
+Hear that? - Yes.
+- Here that one? What did that sound like? - Very dull.
+- It was like wood.
+That wood sound.
+People listen in and you'll hear the sound that you like pretty soon.
+Just listen to it.
+OK.
+Now, listen on this side.
+At-a-girl.
+OK.
+Now, be aware that racquet is part of your arm.
+That's it.
+Just feel it.
+Don't try so hard.
+Let it happen.
+That's it.
+Do what's comfortable, Molly.
+- Every time I did start to think, things went wrong.
+- Just feel the pace.
+- And when I just stop thinking, the body seems to know what to do.
+- Can you feel with your left hand where it is? At-a-girl.
+[INAUDIBLE] Feel it.
+OK.
+Hey, I'll tell you what, Molly.
+We're going to do one other stroke now, and this one is called the serve.
+And the serve is just like a dance.
+Just like a dance.
+We'll come back here and I'll show you how to do a dance called the serve.
+OK? And I've done this dance a little bit.
+So, I'll just do it.
+OK.
+Dah, dah.
+In fact, you can start humming if you want the rhythm like this.
+Try this.
+Dah, dah.
+Dah.
+Dah, dah.
+Dah.
+Out loud.
+- Dah, dah.
+Dah.
+- OK.
+Now, Here's what I want you to do.
+I want you to stand there, shut your eyes, shut your eyes.
+And imagine yourself doing that same dance.
+You might start humming a little bit.
+Dah, dah.
+As you're doing it, yeah.
+OK.
+Now, what I want you to do is no thinking, just go do it.
+Quick.
+No thinking.
+Just go serve.
+Yeah.
+Serve.
+Fine.
+Don't worry about missing.
+Keep serving.
+Don't think.
+Go, do, do, do.
+Quick.
+That's it.
+One.
+Again.
+Don't worry about hitting it.
+Out loud.
+Let's hear it.
+Out loud.
+The rhythm.
+- Dah, dah.
+Dah.
+- There you go.
+I get them to hum the rhythm of my serve.
+So they're not thinking, oh, this is what he's doing with his elbow.
+This is what he's doing with his hands.
+Out loud.
+The rhythm.
+- Dah, dah.
+Dah.
+- There you go.
+I get them to hum the rhythm of my serve.
+So, they're not thinking, oh, this is what he is doing with his elbow, this is what he's doing with his hands.
+They're not trying to remember all that.
+They start humming, and they see themselves doing very similar things, muscular movements, to what I did.
+But they're not thinking about it, so it just comes out naturally and fluidly.
+Now, that didn't take long.
+That's called serving.
+Out.
+- Out.
+- Don't miss it.
+That's it.
+Come, come, come come, come.
+OK.
+OK.
+That's your first point in tennis.
+Score is 15 - Love - Fantastic.
+- Amazing.
+- Beautiful.
+- OK.
+Molly.
+No need for you to miss.
+- And all of a sudden, everything became effortless.
+I was just sort of floating along and doing what came naturally.
+And I said, ah, I'm playing tennis.
+It's really beautiful.
+- Have a clear idea of what you want, then let it happen.
+Don't try too hard.
+I'm going to try to make you miss Molly because this is going on too long.
+So, I'll just get a little bit harder.
+You just keep watching the ball.
+Keep watching it.
+They're rooting for you Molly.
+Don't be distracted.
+Keep on that ball.
+Point.
+- Yay.
+- Molly, that's fine.
+That's called tennis.
+[END PLAYBACK] Well when I saw that, I said something akin to, holy cow.
+Because I had just seen something that I wouldn't have believed possible.
+And I realized it applied very strongly to user interface design, that something really important was going on here.
+So, I got Tim Gallwey's book, The Inner Game of Tennis.
+And I read it.
+And a number of things that he said really stuck in my mind.
+First one was almost a cliche.
+He said, learning happens when attention is focused.
+But he was able to get something out of that because if you don't have a good theory of learning, then you can still get it to happen by just helping the person focus.
+One of the ways you can help a person focus is by removing interference.
+And a lot of what you saw on that tape was a way of holding focus of the mentality that actually had to learn to play the tennis, and removing interference from the mentality that likes to talk and make comments.
+Another thing that Tim said that has particularly stuck in my mind was he said, the problem with most theories of teaching is that the parts of the body you want to have learn don't understand English.
+So, the part of your mentality that understands English doesn't play tennis, and can't play tennis.
+Can't do mathematics, it can't do music.
+What it can do is talk and comment.
+And so, in general for learning most things, it is good to find a way of short circuiting that mentality that we think of as the I that always tries to take over.
+And finally, Tim made a very interesting observation, and that is that the problem with being a beginner is that you get a lot of practice in staying a beginner.
+So, a beginning tennis player most of the time does chase the ball.
+They get to be really good at chasing the ball, but all other forms of tennis involve hitting the ball.
+So, it's very important for Tim to find a way of catapulting anybody learning tennis, like Molly there, out of the chase a ball stage, and instantly getting her into hitting the ball stage.
+So, he had to find a way of getting a person who had never picked up a tennis racquet before to be able to hit the ball 98% of the time they swung at it.
+And we realized that was an incredibly important principle for user interface design.
+Why spend two weeks trying to read an MS-DOS manual to see how to copy a file or open up an application? Why do any of those things? What do you get from it? Much better to find a way of designing the user interface so that the person who uses it acts like an intermediate from the first time that they sit down.
+And then they get into a process that is rewarding in itself.
+Now, these ideas work beautifully for music, and they also apply in cognitive areas very strongly.
+Here's an example of a programming problem, and that is let's take the Logo turtle and write a program to draw a circle.
+And we'll do it with three ages of people, a five-year-old, 10-year-old, and a 15-year-old, as representatives from these three mentality dominant areas, the body, the visual, and the symbolic.
+Now, the way you get a five-year-old to do a circle is something that Seymour Papert learned long ago.
+And that is you tell the five-year-old, close your eyes and make a circle with your body.
+After they've gotten partway around, you say, well, what were you doing? And the five-year-old says, well I was going a little and turning a little over and over again.
+If you type that into Logo, you get a perfect circle.
+And that's because the five-year-old knows differential equations.
+Because the circle is a particularly simple thing in differential geometry, which was only discovered about 150 years ago by Carl Gauss.
+So, a circle is that thing that has constant curvature.
+So, the change in curvature is zero.
+And the child's body mentality, doing mentality, understands that kind of geometry.
+So, the five-year-old comes up with a very simple program that produces an elegant circle.
+The 10-year-old has a harder time because a 10-year-old is visual and really wants to look at things.
+He doesn't want to do things with his body so much anymore.
+And so, he wants to draw circles with a compass.
+And after a while, he'll will see that by drawing lots of circles, he'll see that the main thing about drawing circles with a compass is that the points on the rim are always the same distance from the center.
+So, his turtle program picks the pen up starting in the center, jumps out to the rim, goes 100 there, puts the pen down, makes a mark, picks the pen up, backs to the center, turns one degree and does that over and over again.
+So, it's chugga, chugga, chugga, chugga, chugga, chugga, chugga, chugga, chug, and you get a perfect circle.
+Much harder way of doing it, but still a good circle.
+And of course, I wouldn't be telling this story if the 15-year-old were able to get a circle at all because like most adults, he's in the facts and logic stage and he knows the most horrible fact thought up by the mind of man which is x2+y2=r2.
+A very bad coordinate system, and even if it were a good coordinate system, it has very little operational significance.
+So, here we see an example of just concentrating on different mentalities in people's skulls getting vastly different results in doing the program.
+And surprisingly, the age levels that are supposed to do less well actually do better.
+And this led to a slogan I made up which is that, point of view is worth 80 IQ points.
+So, in other words, if you're in 60 BC in Rome trying to multiply two numbers together, you had to be a genius to be able to remember all the partial products that no Roman numerals generated.
+If you're in 1,300 AD wondering where Mars is going to go, you had to be a genius to be able to figure out all of the Ptolemaic epicycles.
+So, it's not logic that is powerful.
+Logic is actually a weak method because it depends on fragile chains of inference, and people have used logic throughout history, but mostly in inappropriate contexts.
+There is nothing illogical about the way the alchemists, or the Babylonians did things.
+It was that they were in a context in which their logic couldn't do much.
+So, this notion that the context is powerful.
+And if you want to be able to be good at solving a problem and acting much smarter than you are, then you have to find a context that is going to do most of the thinking for you.
+Most computer scientists know this because it goes under another heading called, choose the appropriate data structure before you start tinkering around with the algorithm.
+Do the right data structure.
+It will have most of the result computed almost automatically as part of its inherent structure.
+And all that reminds me of Edward de Bono's famous comment about American business.
+I think it probably applies to American universities also.
+He said, the problem with American business is when it gets in trouble, it doubles its efforts.
+And he likened this to if you have a bunch of people digging for gold in a certain spot, and they get down five feet, and they don't find any gold, one of the ways they could do to resolve their problem is to dig twice as hard.
+And of course, if gold is 20 feet over to the side, then they can dig all the way to China without finding it out.
+And the important idea here is that problem solving, all of these things have more than one dimension.
+And a lot of the important dimensions for doing thinking lie along the lines of these different mentalities.
+And that led to another slogan which said, well gee.
+We don't know how to choose between these Brunerian mentalities.
+The kinesthetic one is very valuable, knows where things are, the image one is tremendously valuable because it gives you a way of picking things out of a conglomeration very easily.
+It's quite a bit more efficient to pick an image from a bulletin board than to pick an item out of linear list of symbols.
+And the symbolic one of course, is very powerful given the right context because it can do inferencing that is not open to these other mentalities.
+So, we thought that the right slogan would be, well gee.
+Why can't we find some way of tying these together? And the way we did it was to say, well one way of involving the kinesthetic mentality is to give you something to point with.
+So, we have the mouse there are not just because it's good to point to the screen occasionally, but because it involves the kinesthetic sense.
+And the kinesthetic sense is the one that knows where you are.
+It's the one that locates you in space, not your eyes.
+Your eyes are an extension of that sense.
+The image one there is for recognition.
+Here's a good experiment you can try some time.
+Get a friend to manipulate cable television movie channels.
+Go to a random movie and see how many frames it takes before you can say whether you've seen it before.
+Think of what that means.
+You may not have seen this movie for 12 or 15 years, and yet after just a few seconds for most people, you can identify that you've seen this movie and usually be able to remember what comes next.
+Famous experiment by Harman some years ago took 25 or 30 people, showed them 10,000 images spaced 10 seconds apart.
+So, it took hours and hours to show them all these random photographs of things.
+And even after 30 days, all of the people in the experiment had better than 90% recall on all of the images.
+So, they could say whether an image was one of the set with 90% probability they could identify occluded portions in the image.
+An unbelievable feat is performed by this mentality.
+Tremendous for creativity in lots of different ways.
+And then, this one is the one that allows you to abstract what you've done concretely there.
+So, all of those things should go together.
+And that was what we tried to do at PARC.
+So, here's one of the first versions of this interface and this is done by Dan Ingalls, who after I had invented Smalltalk was the person who did most of the Smalltalk implementation, and then became the major designer of Smalltalk.
+And this was a crystallization of a lot of the ideas that we had all had culminating around late 1975, around 1976 or so.
+This is what the Smalltalk user interface looked like.
+We see collapsed windows up here that when you clicked on them would open back up again, clock, multiple applications, and so forth.
+Larry Tesler, who's now at Apple had this idea, and this is called galley editor, that documents should be able to have different paragraph types.
+So, you might have a paragraph type of text, you might have a paragraph type that's a picture, and that when you put the mouse into the paragraph, it invoke the editor for what's there.
+And this is a metaphor that I think is going to overtake the cut and paste metaphor that people are used to today because it's much better in general to always work in the context of the results you're trying to get.
+We call it results mode interaction.
+Here's a later version of this principle done by Bob Flagle.
+Multiple views into the same structure were first done at Xerox PARC by Trygve Reenskaug a visiting professor from Norway in our group.
+And he was particularly interested in scheduling.
+So, here is a schedule versus a Gantt chart for looking at the same thing.
+And you see he selected something here, and the selection shows up here, and it also shows up on this list, and it also shows up down here as a list of names of things.
+So, this idea that what you're actually looking at are different views seen through different filters is something we originally got from Engelbart, but redone in this new form in the multiple window user interface.
+And here's the way the interface looks today in Smalltalk.
+And here is just a brief look at what that interface looked like about 10 years ago.
+[VIDEO PLAYBACK] So, what he's doing is actually entering into sort of a hyperspace window.
+He's using a pop up menu there to get a workspace window.
+Scrolling is on the opposite side from what you're used to on the Macintosh.
+And you can see that the scroll arrow is position sensitive and the elevator scrolls you through the text.
+In Smalltalk, anything that you type can also be executed.
+So, if you just type 3+4 in the editing window, or pick up something else, you can say do it, and Smalltalk will go off and do it.
+And here is the state of the painting program as it was almost 10 years ago.
+Those are radio buttons that you could actually control your own features.
+And one of the wonderful things about giving this talk today as that we're almost at the point where I never have to show this movie again because most of the things that we had done at PARC in this system are now available on powerful micros like the Apple Macintosh 2.
+I think the final thing I'll show here is this is a browser structure invented by Larry Tesler in which when you point to a category area, it retrieves a bunch of related things.
+So, we're looking at all the different kinds of things that we can do arithmetic on.
+Picked integer there, looking at the arithmetic part of things you can do to integers, and looking at the operation plus, and here is the code in Smalltalk to do integer plus.
+And here is an example of the debugger in the system.
+We'll type in some nonsense.
+We'll try and add 3 to a piece of text.
+A piece of text says, this is a string.
+So, as we say do it to that, instead of crashing the system what we'll get is a notification here that the string couldn't transform itself into an integer.
+And here we can look and see what was going on at that time.
+So, all of the processing that was being done in that thread of control was set aside in Smalltalk.
+And in fact, once people looked on the disk and found 1,700 suspended processes that were just left they are doing the debugging of the system.
+And now, by expanding that debugging window, we got a picture of things that were happening in that process quite independently of the processes in Smalltalk that are operating the Windows system and the debugging system.
+So, here's the code that was executing.
+Here's the attempt of the string to make itself into an integer that failed.
+It couldn't do that because it couldn't find any new numeric characters to transform.
+And here are the parameters.
+There is the argument.
+Self is the thing that got the message.
+So that's three.
+And so, we get to see all of the things.
+We could single step it if we wished, we can restart it if we wished, and so forth.
+[END PLAYBACK] So, the whole ideal of what we're trying to do here comes back to this question that I asked in the very beginning.
+And that is, what would a computer be if it were like a pencil? Can it be used by children? Well, yes it can.
+Can it be used by adults? Yes it can.
+How low can we go to childhood? Can we go into much, much lower than grade school? Here's an answer to that question.
+It's a tape I got from the woman who is my accountant.
+[VIDEO PLAYBACK] This is her daughter.
+Age 22 months, two months shy of her second birthday.
+And she has never lived in a world that wasn't densely populated with Macintoshes because both her mother and father worked at home, and both of her mother and father had their own Mac.
+And in fact, when I found that the little girl was interested in computers, I gave her an Apple 2 which she rejected.
+She wanted to Macintosh just like her folks.
+And she literally learned to use it by sitting on her mother's lap while her mother was working.
+So, for this child the Macintosh is not a piece of technology, but simply more material in the environment to manipulate.
+And though I don't believe in user surveys, the one I did do with this very young user is I discovered that she vastly preferred Macintoshes with installed hard disks.
+Now, given that she can use the mouse, and some people are surprised that she can without having to look at it, but in fact, it's something that everybody can use.
+It's not too surprising that she can hit visible menu commands in Mac Paint.
+So, when I saw this, I was intrigued.
+I had never seen a child this young interacting with a computer before.
+But I wasn't too overwhelmed until I saw what she did next.
+She wants a fresh sheet of paper, so she hits the closed bar in the window, she saves her old drawing using the pop up, then she uses the pull down to get herself a fresh sheet.
+And she's off and running again.
+And in fact, we discovered that she was about 70% literate.
+About 70% of the generic window commands that are found in any Macintosh application she is able to use, not just in a visual program like Mac Paint.
+[END PLAYBACK] So, the answer is that this stuff is for all of us.
+And the reason it works is not because the goodness of computer science in it, although there is some there.
+The main reason it works is because for some reason, we decided to study human beings and involve lots of human beings called children in our experiment, and try and stay closely coupled to them for a number of years.
+And out of that came a bunch of ideas that could not have sprung just from technology alone.
+So, if it weren't for the multiple mentality ideas of Bruner and the catalysis, of Tim Gallwey's Inner Game of Tennis, and a host of other sources like Suzuki's way of teaching children violin, and others too numerous to mention, we never would have thought of these ideas and implemented them the way we did.
+And I think a good way of ending this talk is with a Winston Churchill joke, which all Winston Churchill jokes he's at a party after a certain number of whiskies.
+And no matter what happens, he's always in perfect command of the English language.
+And in this joke, it's rather early in the evening, and he's over in the corner drinking his Scotch, and the hostess of the party comes over to him terribly distraught and says, Mr. Churchill, I'm really upset.
+I just saw the famous earl over here steal one of my silver salt shakers.
+What am I to do? And Churchill thought for a minute and stuck his cigar in his mouth, and went over to the earl.
+And on the way, he picked up a silver salt shaker and put it in his pocket.
+And when he got over to the earl, he took it out and said, I think we've been noticed.
+Perhaps we should put these back.
+Besides that being the reason we won World War II, the moral of that story is if you want people to go along with you, you have to involve them in the same conspiracy.
+And user interface design is a conspiracy that I hope more of you will get interested in.
+Thank you very much.
+I'm Judith Fleming, and our first question is from Rensselaer Polytechnic Institute.
+"Alan, what do you feel about attempts to protect legally, fundamental ideas and graphics, especially Apple's attempt to protect the Mac interface, Sutherland's patenting of clipping algorithms?" Well, I think that the basic idea of protecting inventions is something that has been around for a long time, and it has done people who have taken the energy to invent things a fair amount of good.
+I would like to have a tenth of a cent for every Window that opens on a screen for the next five years.
+But I think that even in patent law, there is enormous confusion between what's an idea and what's an invention.
+Patent law doesn't allow you to patent an idea even though nowadays, ideas are important as inventions that have been made concrete in some fashion.
+Also, there is a lot of confusion still in what it means to copyright something.
+When I was at Atari, the earliest statutes that they used as precedent were things that had to do with copyrighting of player piano rolls back in the early 1900s.
+So, it's a very complicated issue.
+I think that sort of a first principle in it is if a company spends a lot of money paying people to invent an idea, and then comes out with that idea, they should have some protection for a while.
+I don't see any reason why we should condone having those things ripped off if some company is paying millions of dollars, other companies shouldn't just get it for free.
+And I think beyond that, the situation is pretty much confused.
+This question, Alan, and comes from the University of Utah.
+"Where will powerful micros take us, first in five years, and then in 10 years?" Well I think the simple answer is probably not far enough.
+The basic industry is very conservative.
+Wall Street wants people to stay with the 86,000 and 68,000 architectures, which I think is a big mistake.
+There are lots more interesting things on the horizon.
+And the amount of computer cycles we actually need to do things, particularly that involve interaction, is always grossly underestimated.
+So, I think that the one answer is that the next five years, and especially the next 10 years, could be incredibly interesting.
+Certainly in the 10 year horizon is the possibility of doing real time 3D graphics at the flight simulator level on a desktop.
+I believe that could be done within five years if companies took a great interest in it.
+So, we're at a very interesting stage now where the cost performance, as I think everybody realizes, it doesn't go on a steady curve.
+It goes in jumps and fits because the major cost on the computer is in the packaging.
+And every time you can get the number of transistors up by a factor of 10, you have an enormous change in whether you can put a thing on a board, or whether it requires a rack or an entire case.
+OK.
+Again from the University of Utah.
+"Computers have not been a big success in direct teaching, for example, computer aided instruction.
+Why is this so? And what can be done to improve it?" Well, I think I'm pretty much after the experience I've had with working with both children and adults with computers, and at least dabbling in the areas of learning and education, I think that one of the best ways of thinking of a computer is very similar to thinking of what a piano means in teaching music.
+And the piano can amplify musical impulse.
+We can only sing with one voice.
+If we want to play a four part fugue, we have to use something mechanical like a piano to do it.
+And it can be done very beautifully.
+But for most people the piano has been the biggest thing to turn millions of people away from music for the rest of their lives.
+And I think the way to sum it up, is just to say that all musicians know that the music isn't in the piano.
+If it were, we'd have to let it vote.
+And because of that, that says in any situation where education and learning is involved, that you first have to develop a curriculum based on ideas, not on media.
+The media can be amplifiers of those ideas, but you have to have the ideas first.
+And I think the reason computers have failed is that almost everybody, no matter which way they try and use computers, have wanted the computer to be some sort of magic ointment over the suppurating wound of bad concepts.
+And I think as soon as people get what we saw is an amazing learning experience in the Tim Gallwey tennis experience.
+And that is something that can extend and be amplified by machines, and especially computers.
+But first you have to have the ideas.
+Another University of Utah question.
+My old alma mater is coming through.
+"What new developments to see coming for the disabled?" Well there I think that's a particular interest of mine.
+Because my father was a prosthetist, and something I've been interested in for many years.
+And I just wish more people were working on it.
+The technology is there to do an enormous amount for the 100 million aphasics as an example.
+I think there are 20 million people in the United States right now who've had strokes.
+10 million of them suffer a fair amount of speech impairment.
+It's quite possible to do technology that they can carry around that allow them to carry on normal conversations about things.
+Just an enormous set of areas.
+And I think for people who are interested in user interface, it is another area that gets you out of the McLuhan fishbowl and into a context where you have to go back to first principles and reexamine things.
+So, I think the future there is very bright, but we need more people working in it.
+Alan, whatever happened to Molly? Molly.
+Yes.
+Well it's a wonderful story because after that experience with Tim Gallwey, this is in 1975, she came up to him afterwards and said, hey.
+Does this stuff work for weight control? And Tim said, well gee.
+I don't know.
+Let's see if we can figure out something.
+So, they figured out something.
+And Molly over the next year took off all of her weight and became a very good intermediate tennis player, and for the last number of years, has run an Inner Game Weight Control clinic in Los Angeles.
+This is a business she set up herself to apply the principles that she had used to take off all that weight.
+So, this whole experience completely transformed her life.
+Part of it is she had never thought of herself as being a physical person.
+She had never really thought of herself as having a body.
+And this experience got her in touch with that whole body mentality she had never been in touch with before.
+And that's part of the secret of controlling your weight.
+OK.
+And the final question is two parts.
+First of all, "In terms of increasing human potential, what do you see is the most important challenges for students today?" Well, I felt like when I was in college, elementary school all the way through, except for graduate school, I always felt like a guerrilla warrior where the major task I had was to retain any sense of myself and my own ideas while I was going through this incredible mill of different hurdles other people had set up.
+And so, I think that's number one.
+Number two, I think is for any students who are interested in going into science and the engineering.
+They have to realize that both of those are art forms, and that both of them are sterile exercises without an aesthetic feeling, and that the liberal arts are the best place to develop your aesthetic feeling.
+So, I'm pretty much even against having strong concentrations in engineering, computer science, and those things at the undergraduate level.
+I think people should try and get a really solid liberal arts background.
+And I mean solid.
+I mean of the kind that they would call solid on the continent, not in the US.
+And then use that as an endless well for ideas and metaphors that you can use when you're doing science and engineering.
+I think anybody who has ever read about famous scientists knows that the strongest connection they have with their work is not technical, but aesthetic.
+And so, finding the aesthetic in yourself and developing aesthetic in yourself I think is the biggest challenge.
+And the last part of the question is, "What are you setting as your next challenge?" Well, I think for somebody in their 40s in a field that's only 40 years old or so has the basic challenge I think that we all have, but especially as we get older, is the challenge of renewal.
+Renewal I think is a very special word.
+And I like to use it instead of education.
+So, education has strong connotations, but I think renewal is what it's all about.
+And renewal means always being able to sidle up to a new problem and try and see it from a fresh point of view.
+I find as I get older, it is harder and harder to see things from a fresh point of view.
+And so, for me the kinds of things I need to do are to, for instance, be able to do more music.
+I used to be a professional musician and still very interested in it.
+And I find now that when I have a fair amount of contact with music during the week, that my ideas are fresher in the computer science domain.
+Otherwise there's a tendency to just keep on thinking old thoughts and old pathways.
+Thank you very, very much.
+And thank you for joining us today.
+We invite your comments and questions on this presentation, and we hope that you will make nominations for future speakers and topics.
+If you're viewing this lecture on tape, we've installed some feedback postcards under the label of the video cassette.
+If you're not viewing it on tape, our address is at the end of this presentation.
+Thank you very much.

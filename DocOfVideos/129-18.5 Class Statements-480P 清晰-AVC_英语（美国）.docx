@@ -1,0 +1,59 @@
+Class statements lets you create any type of data you want.
+The class statement looks like this.
+You say class, give the class a name, and then write a suite of other statements.
+A class statement creates a new class, which can be the type of some new object.
+And it binds that class to name in the first frame of the current environment.
+Within the suite, assignment and def statements create attributes of the class.
+Normally, they would create names and frames, but class statements are special.
+So the suite is executed immediately when the class statement is executed.
+So if I define a class called clown and have an assignment and a def statement within there, then nose and dance become attributes of the class, but their attribute values being whatever was assigned or defined.
+So clown.nose is big and red, and clown.dance called returns 'No thanks'.
+Now, these are not typical ways in which you use class statements.
+But I just wanted to tell you what it means to write a class statement.
+And the rest of this lecture will go through the details of how to build a class so that it works effectively.
+When you create a class, it is bound to a name.
+And those names are usually in uppercase.
+And you'll see the class value printed out in this way.
+Now, the whole point of classes is in order to let you construct objects of that class.
+So what we want to do is define an account class that allows us to create bank accounts.
+And here's an idea.
+All bank accounts have a balance and an account holder.
+So the account class should do something to make sure that these attributes appear on each one of its instances.
+So we'd like it to be that if I have an account for Jim, and I bind that to the name a, it creates an object that has both a balance and an account holder.
+So here we're calling our class, as you can see, and that's how we create instances of the class.
+When a class is called, a new instance of the class is created.
+It starts out as a blank slate.
+And it's up to the class to fill it in.
+The specially named init method of the class is called with the new object as its first argument bound to the name self, along with any additional arguments provided in the call expression.
+Here, we have Jim provided in the call expression.
+So if we look at the definition of an account class, what we're going to see is a def statement within it for this special name called init, which takes us arguments self, that's going to be bound to the account object itself, and anything else we need to know in order to create this account.
+The object, which starts out as a blank slate, is passed in and bound to the self, name.
+The other names are bound to whatever else is passed in.
+In this case, we passed in Jim, and that's our account holder.
+Then what happens is that the body of this function is executed.
+And that allows us to assign attribute values to the new object that was created, the new instance.
+So self.balance equals 0 means that as part of this account, now there's a 0 balance, And self.holder, being the account holder, binds holder as an attribute with the attribute value, Jim.
+And now we have something useful.
+It's not just a blank slate, it's something that has a balance and an account holder, which is the idea that we wanted to implement.
+And this is how we implement it.
+Init is a special name.
+And we always use that same special name.
+It's called a constructor.
+So you can see the relationship between data abstraction, and the object-oriented programming system in Python.
+And it's special because whenever the class is called, this gets called automatically with these arguments, as described here.
+So now once I do all that work, if I look up the holder for a, I'll get Jim, and if I look up the balance, I'll get 0.
+Now let's say a word about the identity of objects.
+Every object that is an instance of a user-defined a class has a unique identity.
+It's its own thing.
+So if I create an account for Jim and a separate account for Jack, then a and b are bound to different accounts.
+Every call to account creates a new account instance.
+And there is only one account class but many instances.
+So if I look up the balance of a, I'll get 0.
+If I look up the holder of b, I'll get Jack.
+They both have their own balance and their own holder.
+Identity operators "is" and "is not" test if two expressions evaluate to the same object.
+So a is a is true, a is not b is also true.
+And binding an object to a new name using assignment does not create a new object, but instead just gives another name to the same object.
+This has been true for every example we've looked at in the course.
+And it's true for user-defined instances as well.
+If I say c equals a, c and a refer to the same thing, so they always have the same balance and the same holder because they're the same account.

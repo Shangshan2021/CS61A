@@ -1,0 +1,28 @@
+Let's recall attributes.
+So attributes are part of objects.
+And there's all this new terminology about functions and methods and attributes, I'd like to just review it.
+So all objects have attributes, which are name-value pairs.
+Classes are objects too.
+So classes have attributes.
+An instance attribute is the attribute of an instance of a class.
+And a class attribute is the attribute of the class of an instance.
+So there's two different places you could find an attribute in its instance or in its class.
+Now, here's the tricky part.
+We have the set of all class attributes, and the set of all things that are functions.
+Functions aren't particular to object-oriented programming, but methods are.
+So a method is a function that's also a class attribute.
+In the Python object system, functions are objects.
+Bound methods are also objects, slightly different kinds of objects, that has a function with its first parameter self already filled in, already bound to an instance.
+Dot expressions evaluate to bound methods when you have a class attribute that's a function.
+And this is a very common pattern, where you have some instance here before the dot.
+And after the dot, you have a method name.
+Then that method is the function named with the instance filled in as the self parameter.
+Let's just quickly review what happens when you evaluate a dot expression.
+You evaluate this by evaluating the expression on the left of the dot, which yields an object.
+Name is matched against the instance attributes.
+If an instance attribute exists with that name, its value is returned as the value of the whole dot expression.
+If not, the name is looked up in the class, which yields a class attribute value.
+And that value is returned unless it's a function.
+In which case, you get a slightly different version of the function.
+You get a bound method.
+Or you get the function with its first parameter bound already to the object of the dot expression.

@@ -1,0 +1,662 @@
+>> JOHN: Welcome to CS61A.
+My name is John DeNero.
+I'm one of the instructors for this course.
+I'm also really interested in a research area called Natural Language Processing, which is basically getting computers to do interesting things with human language, like text, like English or Chinese.
+In fact, I work a lot on how to translate automatically from one language to another.
+And these days, I mostly focus on what it's like to help professional translators do that more accurately and more productively.So that means, augmenting humans instead of replacing them.
+That's what I'm excited about from a research perspective.
+But, I also love teaching.
+I've taught this course before, several times.
+I'm excited to do it again.
+And I'm really enthusiastic about the crowd that we have today.
+But I'm not alone.
+>> HANY: Hi guys, I'm Hany Farid.
+I'm also a faculty here, co-teaching with professor DeNero.
+I was distracted by the chat.
+I've now figured out how fast I can read, and it's not as fast as you all can type.
+Some of you are asking how many participants we are now.
+It's 1790 and counting.
+There are 73 of us panelists.
+Two of us are instructors, and the rest are TAs.
+I specialize in visual misinformation.
+So, I think about images and video and audio and how they can be manipulated and altered and weaponize against individuals or societies or democracies.
+If you've been paying attention you know that the internet is awash in misinformation.
+I think about how to analyze visual imagery to determine if it's real or not, and then I think about how to do that at scale.
+So how do you deal with a billion uploads a day.
+500 hundred hours of video a minute to Youtube.
+And do that in a way that creates an open exchange of ideas on the internet, but also deals with some of the harms.
+I'm new to Berkeley.
+I spent the last 20 years at Dartmouth College teaching the introductory course there.
+I thought that was a big class.
+We had 250 students.
+I think we're going to have roughly 2000 in this class, but you have an incredibly talented group of TAs that you'll meet in a minute.
+Professor DeNero is phenomenal.
+I'm excited to be teaching with him.
+We are now at 1822 attendees, by the way.
+I'll keep interjecting what that number is.
+I'm hoping we get past 2000, John.
+>> JOHN: We'll see if we get there.
+We do have more than 2000 enrolled, so if everybody actually shows up to the first day of class, then we'll get there, but you never know.
+Hany and I are going to teach this course as instructors, but we don't really teach this course.
+There's only two of us and 2000 of you, and it takes much more than our efforts in order to make a good course.
+A lot of the learning happens when you're working in small groups.
+And a lot of the teaching happens when you're working in small groups.
+And for that we've brought together just an amazing group of folks.
+The ones that you see beside me here.
+The TAs and tutors for the course have taken this course before for the most part.
+They've often talked this course before.
+They are back to teach again because they want to make sure that you have a great experience.
+And they're my best hope for this being a successful course even though we don't have a campus this semester.
+I know life is very complicated, but we're going to try really hard to make sure you have a great experience anyway.
+And so, I brought them all here today.
+I'm going to switch to gallery view.
+Hopefully you can switch to gallery view.
+You're not seeing everybody.
+There's like three pages of course staff.
+There's 121 people on the course staff.
+So I'm going to let you all unmute and say whatever you want and wave.
+And students, you should just scroll through and see all of these people who are here to help you out.
+Hello, staff.
+I don't know if you unmuted.
+You've got to say something.
+I'm going to say, "hello" and then say 3 2 1 and then you say hello.
+3, 2, 1, hello.
+>> HANY: Maybe they can't unmute, John >> JOHN: Oh, you probably can't unmute yourselves.
+OK, we're going to try one more time while I unmute you all.
+There's some chance I will accidentally unmute all students and that will be great fun.
+OK so here we go.
+Unmute all.
+[People saying hello] >> HANY: By the way, that was the result after we practiced three times, so you get the idea.
+>> JOHN: And I hear that you have no power to scroll, so I will scroll for you.
+Now, page 2 people.
+You've got to wave.
+Don't stop waving now.
+Ok, and page 3.
+And, I think that's all the pages.
+So that's the course staff.
+And now you can leave.
+Thank you.
+So, instead of diving into logistics we thought we would talk about what programming is used for and what computer science is all about.
+Want to take it away with a little demo? >> HANY: Yeah, so, let me just start by sharing my screen.
+I'm going to chat a little bit about what we're going to be doing.
+So, you're going to be writing code and that's sort of part but not all of what this course is about.
+A lot of this course is also how to think computationally.
+How to think about approaching a problem in a systematic and quantitative and logical way, and solving the problem.
+So whether you're taking just this course or you're going to take 10 courses after this and become a software engineer, there's a lot of reasons why you might write code.
+You might write an app.
+You might write a webpage.
+You might write desktop application software to solve a problem.
+You might write data analytics to predict the stock market.
+That predicts climate change.
+To predict when the next earthquake is.
+You might be someone like Professor DeNero who writes code to analyze text to figure out who wrote, for example, a piece of work, or to translate between two languages.
+Or if you're like me and study visual information, you might write code to analyze and play with images.
+And one of the powers of code is that it is arguably one of the most powerful techniques for taking an idea in your head and translating it into something that you can actually do.
+And so I'm just going to show you a couple of things that I can play around with.
+So I like visual images because it allows me to have some fun with, well, in this case John.
+John it's almost the same shirt that you're wearing now and in this picture, not quite.
+>> JOHN: I basically only own one shirt.
+>> HANY: One of the great things about images, which I spent a lot of time thinking about, is that they are just a bunch of numbers.
+So, underneath this image is a bunch of numbers that correspond that are being displayed corresponding to some color.
+This color, of course, is what you'd expect to see in the real world.
+But that mapping is arbitrary.
+I can change the mapping of pixel values to color to create these sort of cool visual effects.So here I have John in this very sort of rainbow-ee look.
+I might want to do something a little bit different and put him into a more earth tone, and something like this.
+I'm here all I'm doing is changing the mapping of pixel values to colors and we're In the early part of the semester so John looks pretty good right now, But at the end of the semester he might look something like this, Where his brain is a little fried from dealing with me and the rest of the staff and students.
+And you can do all kinds of great things with images.
+So, I can do something like this where I can take the pixels and I can distort them.
+And you can see that I'm doing this programmatically.
+I've just written some code.
+I'm not going to go through the code because you're going to learn about all these things later on, but you can have great fun with code.
+And it really is, you know, The only things that limit you are your imagination and your skill set.
+Now, I could spend all day having some fun with pictures of fun and doing disrespectful things like this, but there are also serious things you can do.
+I said early on that I spend a lot of time thinking about visual information, and related to that, I do a lot of legal work in trying to analyze images to extract information.
+And perhaps one of my favorite cases that I worked on was a bank robbery, Where they had a photograph of the bank robber driving away, but the camera was positioned such that you couldn't get a good view of the license plate.
+This is not the actual license plate.
+This is a photograph I took.
+And they were desperate to figure out obviously what the license plate was, because that would allow them to track down who the bank robbers were.
+Now one of the really cool things about flat surfaces—if you think about a license plate it is a flat surface—is that although I'm sort of photographing that at a real grazing angle, it seems like I should be able to sort of turn that a little bit, right? It seems like the information may still be there.
+And, I'm not gonna show you exactly how I do that, but here's what I will tell you is that all license plates in the united states have a 2:1 aspect ratio, so they're twice as wide as they are tall.
+Universal in the United States, no matter what state you're in.
+And there are some really beautiful geometry is called projective geometry that describes how flat surfaces get imaged onto the world.
+And by inverting that, which I'm doing here, You can see that what I can do from that image up top, I can essentially ask myself what it would look like if I was looking directly at it.
+And we can read the license plate.
+And in fact in that case we were able to do exactly this and read the last four digits of the license plate, which eventually led to the arrest of the bank robber.
+And so, I just want to finish with a couple of thoughts.
+The purpose of this was obviously not to show you the code, but to show you the power of code.
+That you're only limited by your imagination and your skills.
+And the job of this class and subsequent classes is to expand on your skillset, is to give you these really raw basic tools that allow you to think about The nature of computation and how you can solve problems whether that's analyzing images, text, data from the stock market, data from climate change.
+And our goal is to teach you those very generic skills and help you apply those to solve interesting and important, fun, exciting problems as you move forward in your career.
+Take it away, John >> JOHN: Yeah, thanks, that was great.
+And actually that last image was exactly what my hair look like when I woke up this morning so, very accurate.
+So, I'll share some slides, and we'll dive into the course.
+Here we go.
+So this is what the course would normally look like on the first day.
+This is obviously not you.
+This is last fall, but I will tell you that it was quite uncomfortable in there.
+So if you want to get a feeling for what it's like to be in this course when we have a campus, just pretend that someone's leaning on you, and somebody else is sneezing on you, and you've got it.
+So I hope that this experience will be more comfortable than a normal time in a lecture hall, but I did want to show you this, just to say: there are a lot of students in this course.
+There's two of us.
+And we really enjoy interacting with students, So don't feel that you have to hide from us just because there are a lot of people in this course, but also be aware that we might not be able to respond in two minutes to everything that you ask, if you ask us directly, because we're slightly outnumbered.
+So our goal is to take something that looks really big like this and make it feel small, and to be responsive.
+But to do that we need more than just a lecture.
+So, the parts of the course that you're going to participate in are all important.
+There is lecture, but we're only going to do this live lecture once, and that's because in a normal semester, after we cram everybody into a lecture hall and the first day, people don't really want to come back.
+And we usually run video versions of lecture during the normal semester and those are much more popular than our live lectures anyway.
+So we are going to have everybody look at the videos that are very similar to the videos that you would watch on any on-campus semester.
+So this part of the course hasn't really changed except that we're going to post these videos a little bit earlier than we used to.
+So, lectures are Monday, Wednesday, Friday, but we are going to post them the night before—Sunday, Tuesday, Thursday—Just in case you want like a 12 hour head start on the course.
+Well, a little less than 12 hours.
+I think we're going to shoot for 5 PM.
+That's not where you're going to learn everything.
+You're going to learn everything when you actually try to solve problems on your own with the support of the course staff and your peers in what's called "lab".
+Labs happen on Mondays, and they are the most important part of the course because The course is about learning to solve problems, and you need to practice.
+And the way you practice is to work on some problems in lab.
+We were going to run lab this semester is we're going to release a lab assignment.
+You can do it on your own if you want to, but that's not what I recommend.
+Instead what I recommend is to come 2 PM or 2:10 PM on Monday to the lab orientation.
+And that will be run by the course staff.
+We have some very experienced TAs who are much better in teaching this stuff than I am.
+They are just going to kind of get you set up to solve some of these problems.
+Give you an orientation.
+Tell you what was actually important about what happened in lecture.
+You should watch lecture before that happens, but you should definitely go to the lab orientation.
+And then, for the rest of Monday, you solve the lab.
+You don't have to do it on your own.
+There are various ways of collaborating with other students and to get help from the course staff.
+That will all be described during the lab orientation.
+So save some time on Monday afternoon or evening in order to solve the lab, and come to the lab orientation so that you know how to get help.
+That's Monday.
+On Wednesday, there are discussions and tutorials, which I think are the most important part of this course.
+We're going to even start this today after lecture.
+You can join your first tutorial.
+There is no discussion content because we haven't really taught you anything yet.
+But it's a chance for you to get to know a few other students and meet one of the course tutors who is going to help you throughout the semester.
+Tutorials are different from lab because you don't need a computer.
+I mean, you do in order to join the zoom session, but you don't in order to solve the problem.
+The goal here is to be able to think through problems yourself without using the computer to tell you whether you are right or wrong.
+And this is a tremendously important skill when you're learning about computer science, when you're learning to program.
+To be able to figure out whether something works on your own, with your mind, without relying on the computer to do everything for you.
+And we have a one-on-one help.
+Your tutorials have a max size of five.
+That's already pretty small.
+But if you want something even smaller, You can get one-on-one help through what's called "staff office hours".
+Those will start up next week, but we do have a few this week, if you need help getting your computer set up.
+We have those on Thursday and Friday, and we'll post the schedule on Piazza so that you know about those.
+I think this is the most important part of the course.I mean, there you're working on a problem for lab or homework or whatever, and you don't quite know what to do next.
+So, you're going to contact someone from the staff.
+You can do this by appointment or by asking for help on demand.
+And I'll describe how to do all that pretty soon.
+Not yet, but pretty soon.
+And then you can get assistance.
+I think that the best way to learn how to do something is to find somebody who knows more about it than you and have them coach you along a little bit.
+They won't tell you the answer but they'll tell you how to proceed.
+Now, I've told you that there are three different things that are the most important part of the course, and this is true because for different students, different parts really help them more, and so you have to try them all in order to figure out what matters the most to you, but there are students at the end of the semester survey who say like, "oh lab was the best thing" or "discussion was the best thing" or "office hours were the best thing." The tutorial format for discussions is new this semester.
+It's meant to help make the class feel smaller and more interactive.
+The staff is really excited about trying it out.
+But all these parts of the course just help you practice and get better and learn and the point of the course is to practice and get better and learn.
+>> HANY: John, can you say.
+There's a lot of questions about the lab orientations.
+Are you going to say something about that? >> JOHN: Lab orientations will be kind of like this except for not run by us.
+They'll be run by some teaching assistants.
+But there'll be a big zoom webinar with some Q&A.
+There's going to be two people running them, kind of like Hany and I are running this now, so that someone can answer questions in the Q&A while someone else is talking.
+And they'll go through some example problems, they'll tell you how to get set up, they'll point out some common frustrations that students have and how to solve them so basically they'll just help you get going, and that should set you up in order to solve the rest of the lab.
+And the rest of the lab you can solve collaboratively.
+In the orientation they'll describe what that looks like.
+Or you could do it on your own if you prefer.
+So stick to the schedule.
+Not this week, this week is different, but next week and all the weeks after that, here's what's going to happen.
+Is that we'll have posted lecture videos.
+We won't have a 2pm lecture instead we'll just post videos.
+We'll post them the night before.
+So on Sunday night you could watch the videos, or you could watch them on Monday morning.
+We're going to hold an instructor Q&A for each set of lecture videos where you can ask whatever questions you have when you're watching the lecture.
+So if you want to ask us questions about the lecture content even though it's on video you can do that.
+If you show up and you don't have any questions, well that's fine you can listen to other people ask questions.
+If you show up and nobody has any questions, then we'll probably come up with something to talk about.
+You know, go over an example from the lecture videos that's really important to spark some questions.
+If you don't show up to the lecture Q&A, that's actually okay too.
+We're going to record it.
+We're going to, well, I am going to, edit out all of the students from the video so that at the end of the day, it'll be just Hany and I answering questions, so we'll try to repeat whatever questions come up and then we'll answer them.
+And we'll make that video available so if you don't want to get up in the morning to come to lecture Q&A, you can still see what happened.
+You can still hear the other students' questions.
+You'll just hear it in a video recording, which hopefully I will post by noon each day.
+2 pm Monday, Wednesday, Friday stuff does happen it's just not lecture.
+2 pm Monday there'll be that lab intro I was talking about.
+That orientation to lab, and then you'll be solving the lab for the rest of Monday.
+It will not take you the rest of Monday.
+Lab is designed to be finished from orientation all the way through submission in an hour and a half.
+But you kind of do need to do it on Monday.
+That's how the course is designed.
+What about Tuesday? Well, this is a Monday Wednesday Friday class, so you can do whatever you want on Tuesday.
+I recommend trying the homework.
+Wednesday we'll have another lecture Q&A for the lecture videos that we posted on Tuesday, and then we'll have a discussion orientation or a discussion intro.
+This you should attend.
+It's another zoom webinar like this that gives you kind of highlights of what you should have learned in the last week.
+How to go about solving problems that we've learned about in the last week.
+And gets you ready to try some of those without using a computer.
+So that's the defining characteristic of discussion is that you don't use a computer.
+You just think, read, and write, and then we have tutorials on Wednesday afternoon and evening.
+So go to the discussion intro otherwise your tutorial will be confusing.
+That's the idea is that these two things are linked.
+Homeworks are due on Thursdays.
+Finish the homework on thursday.
+Friday, we'll have a lecture Q&A, and what about the rest of Friday? Well, usually you won't have anything but sometimes projects are due on Fridays.
+So that's the pace of 61A: new homework every week, new lab every week, new discussion every week, new tutorial every week.
+These build on each other.
+You've got to do them all.
+Please don't fall behind.
+>> HANY: John, a few students are asking, and I know this is going to be a hard question to answer, is how long do the labs take? >> JOHN: Labs are designed to take an hour and a half from like the moment you open it until you turn it in.
+Many students finish faster than that.
+It's not a long thing.
+Homework can often take longer.
+There are more involved problems.
+But labs are supposed to be straightforward examples that help you get oriented and make sure that you know what's going on.
+>> HANY: And a couple people have asked if lab orientation will be recorded.
+>> JOHN: Yes, lab orientation will be recorded and it will be repeated.
+I put it at 2 p.m but we also have them at 6 pm, 7 pm and 9 pm.
+So, if you want to go to a live one and you can't make the 2 pm, that's also possible.
+Same thing with discussion intros.
+Okay, are you supposed to remember all this? No it's all on the course website.
+I'll show you in a second.
+What if you have questions? You could ask them right now, but when we're not having a live webinar the best place to go for asking questions is on Piazza.
+If you make a private post, everyone on the course staff can see it which means you often get answers quickly.
+If you make a public post, then even students will answer, and I do encourage you to answer each other's questions.
+Even if you don't know the answer, you can tell them what you think, but usually it's best to just wait until somebody does know the answer and then that will help even more.
+You can email us.
+You can email both Hany and me and the Head TAs, this is like four or five TAs that help really administer the course, at one email address: cs61a@berkeley.edu.
+And that's a great way to contact us, instead of just sending direct emails to both of us.
+We do have Q&A with the instructors every Monday, Wednesday and Friday morning.
+I'll show you the schedule in a moment.
+You could email us directly.
+This is often the slowest option.
+Remember: 2000 to you, two of us.
+So i would recommend if you're ever going to email us both, just email cs61a@berkeley.edu instead, and you'll get both of us plus few other people.
+And a lot of questions you can answer yourself just by going to the course website.
+Let's take a look.
+That's not the course website.
+That's not the course website either.
+There it is.
+cs61a.org has a weekly schedule that describes where we are now when videos will be posted when the lecture Q&A... uh oh, it says my sharing is paused.
+I wonder why.
+Give me a moment.
+Now you can see, right? I hope so.
+>> HANY: yes >> JOHN: Okay, cs61a.org has a weekly schedule.
+>> HANY: No, John, sorry, we're still seeing your Keynote.
+Did you only share your Keynote? >> JOHN: Tada >> HANY: There you go.
+>> JOHN: Course website.
+Weekly schedule.
+Lecture Q&A.
+Why is it at 9am? That's when we're both available.
+Smetimes it's even at 8am.
+If you go to the next week you'll see that Mondays and Fridays 9am, wednesdays at 8am.
+If you don't want to get up that early, watch the recording.
+If you want to come ask questions, get up early.
+First lecture.
+You've got your tutorial, which is not on here because this is stuff for the whole class.
+And some other things.
+Two to three on Friday, because we'll already have given you the lecture videos, we're going to do like a question and answer session about anything you want; an instructor ask us anything in a webinar just like this.
+So that's what will happen this Friday, but in all future Monday Wednesday Friday 2 p.m. slots you'll have these lab and discussion intros and stuff like that.
+So we'll describe each of these as they come up.
+There's other stuff on the course website like announcements with important links.
+What's the link for X? It's probably right here.
+And you know, pictures of the staff.
+Here's all the tutors and their email addresses and descriptions, so if you're looking for...
+if you want to ask a question of some upperclassmen, and you don't know any upperclassmen, well now you do you know 120 of them.
+You can ask them what you need to ask them.
+>> HANY: John, can you remind us where the morning office hours will be? I don't think it's on this link, right? It's a different link.
+>> JOHN: It's a different link, yeah, so here's a Zoom for lecture Q&A with instructors, Friday 9 to 10.
+Click that and you'll be in.
+But not right now, obviously.
+>> HANY: Thank you.
+>> JOHN: So that's where that link is, and you could also find it on the weekly schedule.
+I think we'll, oh, I guess you can't click on that, well, now we know, we'll just put it right here.
+So if you're wondering where the link is for something, it's usually there.
+>> HANY: Let me also interject that i'm trying to keep up with the questions, but they're coming in faster than I can answer them so I'm trying to summarize them.
+If i don't get to it I'm going to apologize.
+And if we didn't answer your question, go on to Piazza after this, and we'll get to it.
+So you're just typing again faster than I can read and respond.
+>> JOHN: Go team.
+Keep him busy.
+So most of what you need to actually take the course is down here.
+Slides, demos, links to the textbook, links to lab, links to homework.
+This is a project.
+So yeah, here's where all the course material lives, and it's all public.
+So you can click on it whenever you want.
+Okay, this is an introduction to computer science.
+And how do we teach an introduction to computer science? Well, we teach you what computer science is, and then we introduce you to all the important concepts.
+So what is computer science? Well, it's the study of what is actually the most flexible machine ever created by people.
+The computing machine can do so many things.
+In particular we tend to study what problems can be solved using computation, how to solve those problems—that's a lot of what this course is about—and then what techniques lead to effective solutions.
+So maybe someone's discovered already the right approach for sorting a list.
+That's part of what we teach in computer science.
+Mostly that's a topic for 61b.
+And in 61a, we tend to focus more on how to solve any old problem that comes your way.
+But if you talk to a computer scientist and say, "Hey, what do you do?" They typically won't say, I study computers, which are the most flexible computing machine of all time; or most flexible machine of all time.
+They'll tell you what part of computer science they study.
+All the researchers in the computer science division or on campus who call themselves computer scientists really work on like particular areas like systems, which is about building the operating system for your phone or globally distributed systems like Facebook.
+Or instead they work on artificial intelligence, which is about getting machines to do things that living things are good at, like walking around and interpreting images.
+Or they work on graphics to make cool Pixar movies, or security to make sure that, you know, no one can break into a Zoom webinar for 61A who's not already a Berkeley student.
+Or networking to build the internet or programming languages to build all this infrastructure or theory or scientific computing.
+There's all these different subfields of computer science.
+And in fact within each of these there are sub-subfields.
+Most people who work on artificial intelligence don't work generally on artificial intelligence.
+They work on some particular thing, like decision making.
+The best chess player in the world is a computer.
+The best go player in the world is now a computer.
+The best Jeopardy player is a computer.
+Or robotics or something called natural language processing.
+That's what i work on.
+Trying to get computers to do useful stuff with text.
+But actually I don't really work on this whole sub-subfield.
+I mostly work on a sub-sub-subfield.
+I don't work much on question answering like what Siri does or Alexa.
+I work more on machine translation.
+And there are many other sub-sub-sub-fields of this sub-sub-field, which is just a part of this sub-field which is one of many in computer science.
+And we need to introduce you to all of this.
+So, how do we teach such a course? Well, part of it's learning to program, but another part of it is to deal with the common enemy of all computer scientists.
+When you want to do something interesting in any one of these fields, then you have to wrestle with complexity.
+Whenever you build something interesting, it's just really complex, and we do have a common tool in our battle against complexity, and that is called abstraction.
+So i'll give you my take on abstraction.
+Maybe Hany has a different take.
+But my take on abstraction is: what it means is you're giving a name to something that's complicated and not worrying about its parts.
+So, right now you're looking at me and what am I? I'm a person that is made out of like skin and bones and organs and has a lot of water in it and each of these things has chemical composition.
+You know, you could think of me as like a bunch of carbon and nitrogen, but you don't do that.
+You just think of me as "John" And you could say like, oh he's talking about computer science, without having to know how many carbon atoms exist in my body right now.
+That's abstraction.
+That's something you can do already, but that same idea applied to computer programming is something that takes some practice to develop, and is a skill.
+So that's what we're going to work on in this course.
+And we'll also talk about something called programming paradigms.
+so these are ideas that have really stood the test of time in developing programs that help you organize large programs.
+Exactly what they are is something that i'll teach you, we'll teach you, later, but it is an important piece of computer science that's shared across many sub-disciplines that you'll learn in this course.
+It's also an introduction to programming.
+We're going to learn all the fundamentals of Python.
+We're not going to learn a lot of the like interesting latest additions to Python or the cool things you can do to draw a graph or make music or something like that.
+We're really going to focus on the fundamentals of how the programming language works, which applies broadly to anything you might want to do in computer science.
+And we will build some pretty large projects.
+I've presented the projects in this course to people elsewhere like other instructors and they often say, "well that's cool but there's no way my students could complete such a project." But berkeley students can.
+You are very bright, and we're going to give you support so that you can build some pretty interesting things, even in your first course.
+And we will end this course by talking about how computers actually interpret programming languages.
+So, how is it that you write a program and the computer knows what to do? Well, it turns out that's just another program and you could write one of those yourself.
+That's what you'll do as your final project in this course.
+How are we doing on questions? >> HANY: I'm still overwhelmed, okay, but I'm responding as much as I can.
+I'm gonna save a few more for you when you're done, John.
+>> JOHN: Okay, we'll touch on three different programming languages in this course, because it turns out that mostly in any kind of software development or data science or computing career, you end up dealing with multiple different programming languages, because they're better at various things.
+And so we're not just going to teach you two similar languages.
+We're going to try to give you a flavor for the variety of things that are out there so that you can understand how different languages are better for different purposes.
+That's, like, a pretty long list.
+So this is a challenging course.
+It's known to take a lot of time.
+Particularly if you don't have any prior programming experience, this can be a very time intensive course.
+It doesn't really matter what kind of programming you've done in the past, whether it's you know take an AP course or self-studied.
+Any experience tends to be helpful in terms of reducing the amount of time it takes to take this course because you've just seen some of it before.
+If you're starting from scratch, it is possible to take this course and to succeed.
+It has been done many times over, but it takes a lot of time, so if you have a really busy schedule of other courses, and you've never programmed before, this is typically not the right course for you.
+Now, it might be.
+You can try it.
+You're certainly welcome to try it.
+But just be aware that most students in this course do have some prior programming experience of some kind or other, and that if you don't, it's just more to learn, and that means it's going to take more time.
+There's a way around this situation, which is to take another course first.
+And so i'll just say a few words about that.
+There's a wonderful course on this campus, CS 10: the Beauty and Joy of Computing.
+Some people on this webinar have taken it before, and I hope you enjoyed it.
+It's got a cool mascot.
+It's got a cool logo.
+And it's designed for students without prior experience.
+So, this course is designed for the people who take it, which is mostly people who have programmed before.
+Most of you might not know Python.
+You won't know the concepts in this course.
+But at least you've written some programs before.
+And CS 10 is different.
+It uses a programming environment that was created at Berkeley.
+It's now used in courses around the world.
+Big online courses use it as well.
+That doesn't involve writing text, but instead involves putting blocks together, which gives you the same expressive power as a programming language like Python, but there are less ways you can go wrong.
+And then the course evolves and actually teaches you some Python later in the semester so that you can kind of see what it's like to work with a text-based environment.
+But you have a nice path to get there where you can understand what's going on along the way.
+And it's less frustrating.
+And you write programs to, you know, draw cool stuff, but also much more elaborate projects as well.
+This is an introduction to the fundamentals and Python.
+It sets you up for success in 61A.
+We ask students who come in from 10 to 61A whether it was helpful, and by and large they say yes.
+There's more info on the web.
+And there's still space in this course.
+So if you decide you might want to switch, you should probably go check out their first couple of weeks, even while you're in 61A, just to see what it's like.
+And you might find that it's better if you take CS 10 and you take 61A next semester.
+You won't be behind.
+Everything's fine.
+And you might have a better experience in both courses.
+Or you might decide that it's not for you, and you want to stay in 61A.
+That's fine too.
+>> HANY: I'll also add that in addition teaching this, i'm teaching a class in the I school, in the School of Information.
+It's called INFO 206A.
+It's a seven week course.
+It also assumes no prior knowledge of Python or programming.
+Probably it's a little bit slower ramp up than this class.
+You don't, I'm not necessarily suggesting that you go out of this and take that course, but all of the videos for that course are now online, and they have a nice gentle introduction from print hello world to objects and you can use that to augment the material.
+So, if you're sort of on the fence between 10 and 61A and you want some outside external resources, you can look at that for some of the same concepts but presented a little bit differently than what you'll see here.
+>> JOHN: Yeah and I think we're gonna link some of that from the course website, just so you know where to find it.
+I think it's really nice supplemental material.
+>> HANY: Okay, I see many questions so that means maybe some of them are about course policies.
+>> JOHN: Let me just say a little bit about course policies.
+The purpose of this course is for you to learn something you don't already know, not just to prove that you already know something.
+You don't need a course for that.
+You just need an exam for that.
+For this reason, I don't tolerate people who give other students a hard time just because they haven't figured something out yet or haven't learned something yet.
+That's the whole point is that you come in not knowing how to do things and you come out knowing things, but there's a struggle in the middle where you have to practice.
+And so it's okay if you haven't mastered everything yet, at any point.
+And no one should be giving you a hard time for that.
+If that happens, please let me know.
+One of the best things you can do is help each other learn, and the thing that makes this course special is in part the core staff—they're really wonderful—but in large part the community of students that you'll work with.
+And of course it'll be a little bit harder to get to know other students in this online semester, but that's why we're adding tutorials and a bunch of other things that we'll introduce next week.
+So you have a chance to talk to other students, and you should really try to help each other out.
+One of the best things you can learn how to do in college is explain stuff to other people, especially technical stuff.
+And so try it out in this course.
+And the course staff is really not there to judge you.
+We already know you're smart.
+You got into Berkeley.
+We already know you're going to do great things.
+We're here to help you get the most out of this class that you can.
+So, you know, treat the course staff that way.
+And in particular, don't be afraid to engage with the course staff.
+Ask questions.
+They really do want to support your success.
+There are more course policies, in fact, a lot of them, and they're on the web, and you know how to read, so you can read them.
+There's one section in there that I haven't finished yet about the grading policies, but I will get that up by the end of the week, so stay tuned.
+There's one more piece that i think we have to talk about, which is collaboration.
+Asking questions is highly encouraged.
+Discuss everything with each other.
+Learn from your fellow students.
+That's great.
+Some projects can be completed with a partner and that means you can share everything with your partner.
+You can watch each other type.
+That's great.
+Oh, this is out of date.
+Choose a partner from your tutorial group.
+That's what i recommend.
+You can pick any partner you want, but if you meet someone in your tutorial group, you might as well work with them.
+Then you have the same tutor you can talk to.
+But there are limits to what you can do in terms of collaborating.
+Do not look at other people's code unless it's your partner or you've already solved the problem and you're trying to help them out.
+That's fine.
+Or actually, in lab, you can kind of do whatever you want.
+Lab is purely for learning.
+I don't really care whether you figured it out on your own.
+I do care that you understand it, but for homeworks and projects you should not be looking at other people's code.
+You should be asking other people questions about what's wrong with your code or what to do next.
+Please don't tell other people the answers.
+You can tell them what's wrong with their answer.
+You can describe how to fix it in words.
+Just don't tell them what to type.
+And don't type it for them.
+Don't deprive them of the opportunity to learn that comes from solving problems.
+That's really the only way to learn in this class is to practice solving problems.
+And so you've got to give people a chance to do that, and even if they ask you for the answer, just say, "no I'm not going to give you the answer but I'm happy to help you out.
+>> HANY: Yeah, let me interject here.
+There is this notion, i think, that learning happens when you solve the problem.
+That is completely wrong.
+Learning happens when you don't solve the problem.
+When you are struggling through.
+When you have solved the problem, you've learned it.
+It's over, right? So the the process of failure, the process of struggling, the process of taking hours to solve something is where the learning is happening.
+If somebody shortcuts that for you or you shortcut that for somebody, as John said, you've cheated them.
+You've cheated and you've cheated them.
+And so don't don't be frustrated by things not working.
+That's the way it's supposed to be.
+That's what the process of learning is and it's okay.
+It's supposed to be that way.
+It's like that way for all of us.
+>> JOHN: Yeah, exactly right.
+Now, there are limits.
+If you're stuck somewhere for six hours, don't be stuck by yourself.
+Ask somebody, but ask them and if they tell you too much you can say like, "okay, that's enough.
+I need to figure it out." That's the way to go.
+Copying project solutions: that's how you fail of course.
+Don't do that.
+Collaborating on exams: another great way to fail the course.
+Don't do that.
+I don't want you to fail.
+It breaks my heart every time I have to fail somebody because they copied something.
+But that's what I'm going to do, and you know it in advance, so just don't try.
+We do catch people who violate the rules.
+We use computers to do it.
+We're pretty good programmers.
+We're getting better at it every semester.
+It's really not worth trying.
+There's lots of students who try to cut corners because they think nobody's watching, and then they get caught and and life is miserable.
+When i say lots of students, it's like a very small fraction, but since this is a huge course, there's always a few every semester, and i don't want you to be one of them.
+>> HANY: I will tell you, as somebody who spends a fair amount of their time working with law enforcement catching bad guys, the thing that's sort of interesting is the bad guys don't know what we know.
+We know a lot of things and not only is it just the wrong thing to do you are outgunned right now, even though it's just the two of us against 2000 we actually know a lot.
+We've been teaching for a lot of years.
+So don't don't screw around with us.
+>> JOHN: I think that's right.
+And you should build good habits now.
+You know, there are answers to copy sitting there on Github right now for this course.
+But when you go out there in the world and are solving a real problem, there will be no answers to copy.
+So you've got to learn how to solve stuff for yourself.
+That's why you're in school.
+Also wthe reputation that you build among your peers here matters, because you will work with these people for the rest of your life.
+You'll run into them in all sorts of different contexts that you don't expect, and if everybody knows that you're that person who who copied all their projects, that's not going to serve you well in the long run.
+Okay, let's do a little demo.
+I'm not gonna expect you to understand what's going on in this demo.
+I'll explain a little bit of it, but if I had to explain everything, then it would be a boring demo for the first day, and I don't want a boring demo for the first day.
+So instead, I'm not going to explain everything.
+You'll learn it later on in the course, but I will describe the five different parts of this course.
+We talk about functions for a few weeks and then values and then objects and then interpreters and then data, and I'll try to give you a flavor for what all those mean and why they're important, and why we include them all in the course.
+So we're going to use Python as our programming language: a particular variant called Python 3, which is the latest.
+When you start up Python, this is a programming language interpreter.
+It's waiting for you to type code, which is the program, and it will evaluate it for you.
+So, the simplest piece of code is just a number and it will tell you: oh, here's the value of this thing that you've written.
+but it's also a really good calculator.
+So it could add 2000 and 20 together.
+It's better than just that.
+You can have negative numbers.
+You can add multiple numbers together.
+You can mix together addition and multiplication, and it will group terms just like PEMDAS, like you learned in algebra.
+Or, if you don't want to do it that way, you can add parentheses.
+You can even divide and take the result of that and add it to something that you multiply together or whatever, and it's so fast as a calculator.
+It just does it right away.
+There are functions built in.
+You heard about functions in algebra class like f of x. they're not all called f.
+Some of them are called g of x.
+Well, in Python they're called all kinds of things, and they have built-in behavior, so I could take the absolute value of a number, and that's something that's built into Python already.
+And you can even take the absolute value of the result of some other computation.
+So we're going to spend a while talking about functions, how to define your own, what they can do.
+That's going to be the first four weeks of the course.
+But it turns out that Python's interesting, just like all programming languages, because you don't just work with numbers.
+You work with anything you want.
+You can represent text.
+You can represent the text "go bears." You can even manipulate other kinds of data than numbers.
+You could add together two strings and that has a meaning in Python, which means put it together.
+But where programming gets really interesting is when you start representing other stuff.
+You saw Hany representing images and working with those.
+There were numbers under the hood, but there were also images.
+And today I'd like to work with text, because that's what I like to do in my research.
+One of the most interesting sets of text ever is the collected works of Shakespeare, which I have on my computer.
+37 plays.
+I haven't done anything with these plays yet except for tell Python where they are.
+They're in a file called shakespeare.txt.
+If you actually wanted to read 37 plays, that would take a while, right? So I guess it didn't take that long at all, because computers are really fast.
+Now, it hasn't understood all of this text but it has made it available to us for further processing.
+And we can find out things like there are 980,000 words in Shakespeare's 37 plays.
+Well, that's a lot.
+That was one prolific bard.
+And what does this stuff look like, anyway? Well these are individual words, so it's got the title of the play, A Midsummer Night's Dream, and then it's got the text: Now fair Hippolyta, our nuptial hour draw's on apace.
+Four happy days, blah blah blah.
+Okay, Python doesn't understand these words in the way that we do, but you can do a lot of different manipulations and really you have the freedom to do whatever you want.
+So, when we talk about values we're talking about different kinds of things that we might represent, and then we talk about what are called objects which are things that behave in the way that they might in the real world.
+So, if you had a bunch of text you could do something with it like count how many times the word "the" shows up in Shakespeare's plays.
+23,000 the's.
+That's a lot of the's.
+I thought that Shakespeare had its own particular vocabulary, like there was a lot of "thou", right? Oh five thousand.
+that's a lot of thou! If you don't know about "thou", it's how Shakespeare said "you", right? He didn't say "you"; he always said "thou".
+Oh I guess I was wrong.
+"you" shows up twelve thousand times.
+So here's something that we learned about Shakespeare's plays just using a short program.
+A few expressions.
+Exactly how these work, we will describe in great detail in the course.
+I'm just giving you a flavor for what you might be able to do.
+What else might show up a lot? "forsooth" only 40 times.
+What probably shows up more than anything else? Actually, if you look at how this is represented: Midsummer Night's Dream Now, comma, fair Hippolyta, comma, our nuptial hour draws on apace, colon.
+Each punctuation mark is treated as its own word.
+So actually there's a lot of commas: 81,000 commas.
+More than eight percent of all of Shakespeare is just commas.
+So I guess maybe it's not as impressive as we thought it was originally.
+Well, I'm out of time, but you know, it's the internet so we'll just go on for another two minutes and then if you gotta leave you gotta leave.
+So what's really exciting about programming languages is that you can re-express or change the way you represent information at any time.
+so if instead of the 980,000 words in their original order, if what I really care about is what are all the unique words that Shakespeare used, then I can take this list of words and turn it into a set.
+And how many words are there, well there's only 33,000 different words.
+And it has things in it like "forsooth" but it doesn't have "computer" because there were no computers when Shakespeare wrote plays.
+>> HANY: How many times is John in Shakespeare and is John in there? >> JOHN: It's there.
+Text dot count John.
+I mean, I better be important.
+263.
+I got you.
+>> HANY: All right well that's the way it goes.
+>> JOHN: You could take an individual word and you could do something with it.
+Like, here's something where you just pick out the first letter.
+But a programming language allows you to combine a particular operation in some larger expression that for example could let you do this many times.
+So just like I can get the first letter of the word "draw" I could get the first letter of every word that shakespeare ever used.
+And I'd get, what, like all 26 letters, right? >> HANY: I don't know why, but several people want us to count "egg" is there a reason for that? >> JOHN: It's done.
+"John wins against "egg".
+excellent.
+Okay we got more than 26 letters because we got all the uppercase letters and all the lowercase letters and all the numbers and some punctuation in there too.
+How many things were there well here we can combine two things that we already learned about: the length of a set and how to build a set, and we finally have 71 first letters.
+Okay, that's kind of interesting.
+What else could be interesting? Well here's another manipulation I can do to a word.
+I could write it backwards.
+So "draw" backwards is "ward".
+Why do you write this particular thing? That's a topic for another day.
+That's just how it is.
+But once you know you can do that for a single word, you could do it for all the words.
+You could ask something like: what are all the words in Shakespeare that are the same if i write them backwards? Oh, there's a bunch of them.
+Oh, but some of them are boring like question mark and bob, so maybe we'll just do the longer ones.
+and the length is uh bigger than four.
+Oh, now we're into some interesting words.
+So "redder" is the same forward and backwards.
+Same with "level" and "refer".
+What's special about programming languages is that they don't restrict you to just a few things.
+You can combine these in any way you want.
+So i could also ask what are all the words in Shakespeare if writing the word backwards is also a word in Shakespeare? This is a different thing that's combining the same elements in just a different way, and we find that there's a bunch of words that are also words backwards, like "spit" and "tips" and "flow" and "wolf" and "loop" and "pool" are all in this list.
+Or we could look for even longer ones.
+"knits" and "stink".
+I don't think I would have thought of that, but the computer just found it for me almost instantaneously.
+Nice! Could you think of one that's got length six? I'll give you a hint.
+Anything that's in this set of words that are also a word backwards is also, oh sorry, anything that's in this set of words that are the same forward and backwards is also a word that is a word when written backwards.
+So that means "redder" is going to show up in this set.
+But it's not the only one, because we also have "drawer" and "reward" and "repaid" and "diaper".
+And are there any other longer ones than that? Well, it turns out there aren't.
+So that's what we learned about Shakespeare today.
+Just a flavor for what you can do with the programming language by starting to combine different little pieces that you learn into larger and larger expressions.
+And that's what you'll do in this course.
+Quick tips on what comes next: tutorials happen today.
+Go to tutorials.cs61a.org Watch friday's lecture videos either Thursday night or Friday.
+You could come to the Q&A session if you want.
+You can ask us anything on friday from 2 to 3.
+And there's no lab or discussion this week, so you haven't missed anything.
+This was the only event so far.
+And here's everything that's happening this week.
+And that's it.
+All right, thank you for coming and i'll see you soon.
+>> HANY: Thanks everybody.

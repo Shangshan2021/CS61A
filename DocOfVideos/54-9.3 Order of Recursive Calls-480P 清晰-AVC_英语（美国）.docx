@@ -1,0 +1,66 @@
+Understanding the order of recursive calls is important in understanding the behavior of recursive functions.
+And the thing to remember is that when you make a function call, you have to wait for it to return before you can do anything else.
+So if one function calls another function, and then does something after that, that function call has to return, before whatever else happens next.
+Let me illustrate what I mean with the cascade function.
+The cascade function takes in a positive integer n, if n is less than 10, it just prints out n.
+Otherwise, it first prints n then makes a recursive call to cascade on a smaller number that's everything except for the last digit of n, or n divided by 10, with the remainder thrown away.
+And finally, after that recursive call to cascade, it prints n again.
+Let's take a look at the behavior of this function.
+So if I cascade just the number 5, that's the base case, and I print out the number 5.
+But if I cascade(12345), then I see this beautiful design where 12345 is printed.
+And then we see a cascade of smaller versions of that.
+And by the way, the original number is printed again, at the very end.
+Now the first and the last lines all come from this print statement.
+And in fact, most of the lines that you see here come from either this print statement or this print statement.
+Only the base case, which is for the number 1, comes from this print statement.
+What this is supposed to illustrate is that all the cascading that happens recursively happens before the final print.
+And that's why you get this nice nested structure.
+Let's take a look at the environment diagram so that we can see exactly what's happening.
+So we've defined cascade and then call it on 123.
+The original call, checks for the base case, doesn't find it, and so prints out 123.
+In the Python Tutor, you can see that the program output generated so far, it's just the number 123.
+We still have to generate all the rest.
+And how do we generate everything smaller than 123? Well, that involves a recursive call to cascade.
+In this case, we've thrown away the last digit and we're left with just 1 2.
+So the important thing is that this call to cascade will complete before we ever go back and finish the original one.
+So what do I mean by complete? Well, it's kind of print 12, make a recursive call on n equals 1, which is the base case which gets printed out.
+So now we've cascaded all the way down.
+How is it that we cascade all the way back up? Well, our third call to cascade returns.
+What does it return? None.
+Why? Because there's no return statement at all.
+And def when executing the body of a function, you reach the end of the body without ever seeing a return statement, you always return none.
+Okay, now we have to ask ourselves, where do we return to? Well, we're in the middle of this call to cascade, which involved this line.
+Finally, we figured out that that had a value of none.
+And then we go on and finish printing n is 12 right there.
+And when we print that, we actually see that 12 appear, and we have a return value of none from this call, which means that we can finally return to our original call to cascade and finish up.
+So we've evaluated this.
+And in the course of evaluating that we've generated all this output.
+And finally, we're going to print n at the very end.
+And now we're done.
+Okay, so a critical moment in the environment diagram was when we had returned from the second call to cascade, but we hadn't yet finished the first call.
+So the first call had printed n, it had cascaded all the way down to get 12, 1, and 12, but it hadn't printed n yet.
+And that's the very last step of cascade.
+So each cascade frame comes from a different call to cascade.
+And until the return value appears, that call has not yet completed.
+And so any work that happens after that call hasn't happened yet.
+Any statement can appear before or after a recursive call, there's the one before and there's the one after.
+It was the third call to cascade that printed out the number 1.
+It was the second call to cascade that printed out both of those 12's, one before and one after printing the number 1.
+And finally, this first call printed the 123, and is about to print 123 at the very end.
+Now, that's not the only way to define cascade.
+An even shorter version would say, well, in the base case, or in the recursive case, I always print n first, so why not just put that at the very top? And then there's actually nothing left to do in the base case.
+So I could just change this if statement to be all about the recursive case, which is when n is greater than 10.
+I will cascade and then print again.
+So now if I cascade(12345), it still works.
+And I have a slightly shorter function definition.
+By the way, this works, even if I add more numbers, and it only becomes more beautiful.
+But which version of cascade is better? So we have one that breaks out the base case and the recursive case and tells you what to do in each.
+We have this other one that finds what's similar between the two and tries not to repeat itself.
+The two implementations are equally clear, then I think it's usually better to prefer the shorter one, just because it takes other people less time to read it.
+In this case, the longer implementation is more clear, at least to me, because it clearly breaks out what's the base case, and what's the recursive case in that order.
+And that's the way I'm used to reading recursive functions.
+So when learning to write recursive functions, I recommend doing that as well.
+But you don't have to.
+But both of these are recursive functions, even if only the one on the left has a typical structure.
+If you're trying to choose between one and the other, remember that when you write programs, they should be written for somebody else to read, and only incidentally for a computer to execute them.
+So think about which one you'd like to read if you were reading somebody else's program, and make your choice there.
